@@ -12,7 +12,9 @@ export const Post = ({ data }) => {
     );
   };
   return (
-    <article className="rounded-sm border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
+    <article 
+    style={{background: "linear-gradient(90deg, rgba(173, 211, 255, 0.08) 0%, rgba(83, 157, 245, 0.08) 100.02%)"}}
+    className="rounded-sm p-6 shadow-md">
       <div className="mb-5 flex items-center justify-between text-gray-500">
         <div className="flex">
           {data.frontMatter.categories.map((tag: string) => {

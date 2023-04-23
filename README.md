@@ -1,8 +1,10 @@
 # Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9d9e824a-0954-43cf-92de-9393a1f2f882/deploy-status)](https://app.netlify.com/sites/radiant-choux-7aba5d/deploys) — [![Web Icon](/public/images/web-icon.png) Live Deployment](https://radiant-choux-7aba5d.netlify.app/) — [![Figma Logo](/public/images/figma-icon.png) Open in Figma](https://www.figma.com/file/N3t38qnVsBG5MFeYvP5p4x/FI6-Portfolio-Template-Made-by-Fin?node-id=0-1&t=6hYwn2zwh31VdVat-0)
+
 A portfolio website built using Next.js, TypeScript, Tailwind CSS, and Markdown. The website is designed to showcase and distribute my work and publications.
 
-![Portfolio Thumbnail](https://repository-images.githubusercontent.com/629884956/297aa2e3-a36a-4060-950e-01d330d6bd6c)
+![Portfolio Thumbnail](/public/images/thumbnail-min.png)
 
 ## Technologies
 

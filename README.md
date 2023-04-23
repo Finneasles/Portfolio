@@ -4,7 +4,7 @@
 
 A portfolio website built using Next.js, TypeScript, Tailwind CSS, and Markdown. The website is designed to showcase and distribute my work and publications.
 
-![Portfolio Thumbnail](/public/images/thumbnail-min.png)
+![Portfolio Thumbnail](/public/images/thumb-min.png)
 
 ## Technologies
 

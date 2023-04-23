@@ -35,7 +35,7 @@ export const Post = ({ data }) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <div className="flex w-full flex-col-reverse lg:flex-row lg:space-y-0 lg:space-x-2">
-            <Button>Read More</Button>
+            <Button href={"publications/" + data.slug} >Read Article</Button>
             <div className="mb-5 flex space-x-2">
               <div className="relative h-7 w-7">
                 <Image

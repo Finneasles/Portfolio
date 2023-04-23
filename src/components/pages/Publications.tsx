@@ -6,15 +6,12 @@ import {
 } from "@/components";
 import { useState } from "react";
 
-const pageTitle = "Publications";
-export const PublicationsPage = ({ posts }) => {
+export const PublicationsPage = ({ posts, pageTitle }) => {
   const [title] = useState(pageTitle);
-
   return (
     <Layout title={title}>
       <Hero />
       <div className="px-6 py-16 lg:px-32">
-          {/* <Cards /> */}
           <Publications allPosts={posts} />
       </div>
     </Layout>

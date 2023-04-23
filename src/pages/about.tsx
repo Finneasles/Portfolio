@@ -1,8 +1,8 @@
-import { PublicationsPage } from "@/components";
+import { Homepage } from "@/components";
 import { getAllPostsWithFrontMatter } from "@/utils";
 
-export default function Home({ postsData }) {
-  return <PublicationsPage pageTitle={"Publications"} posts={postsData} />;
+export default function About({ postsData }) {
+  return <Homepage posts={postsData} />;
 }
 
 export async function getStaticProps() {

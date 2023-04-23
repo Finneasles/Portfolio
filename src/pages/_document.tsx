@@ -5,7 +5,7 @@ import React from "react";
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head />
         <body
           className="bg-grey-100 text-black

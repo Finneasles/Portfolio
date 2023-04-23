@@ -15,8 +15,8 @@ export const HeroSection = () => {
             Phasellus convallis lorem urna, eget dignissim ante bibendum eu.
           </p>
           <div className="space-x-2">
-            <Button size={"sm"} variant={"heroPrimary"}>👋  Let&apos;s Chat</Button>
-            <Button size={"sm"} variant={"secondary"}>
+            <Button href="/about"  size={"sm"} variant={"heroPrimary"}>👋  Let&apos;s Chat</Button>
+            <Button href="/about" size={"sm"} variant={"secondary"}>
               Leave a message
             </Button>
           </div>

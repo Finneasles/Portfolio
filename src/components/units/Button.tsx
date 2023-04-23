@@ -9,6 +9,7 @@ type Props = {
   onClick?: () => void;
   size?: string;
   type?: string;
+  ariaLabel?: string;
   variant?: string;
 };
 const variants = {
@@ -47,6 +48,7 @@ export const Button = ({
   onClick,
   size,
   type,
+  ariaLabel,
   variant = "primary",
 }: Props) => {
   return (
@@ -54,6 +56,7 @@ export const Button = ({
       onClick={onClick}
       href={href ? href : null}
       type={type}
+      aria-label={ariaLabel}
       className={cls(
         size ? sizes[size] : null,
         `inline-flex select-none items-center rounded-sm px-6 py-3 text-sm font-medium ${variants[variant]} cursor-pointer focus:outline-none focus:ring-4`,

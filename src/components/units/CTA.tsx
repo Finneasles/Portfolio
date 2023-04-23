@@ -5,8 +5,8 @@ import { Button } from "@/components";
 export const CTA = () => {
   return (
     <div className="flex justify-between space-x-1">
-      <Button icon={<AiFillMail />} variant={"secondary"} />
-      <Button>Hire Me</Button>
+      <Button href="/about" ariaLabel={"Sign In"} icon={<AiFillMail />} variant={"secondary"} />
+      <Button href="/about" ariaLabel={"Contact me"}>Hire Me</Button>
     </div>
   );
 };

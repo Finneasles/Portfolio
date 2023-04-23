@@ -37,6 +37,7 @@ export function Consent() {
       </p>
       <div className="mt-4 flex justify-between align-middle">
         <Button
+          href="#"
           className="text-bold"
           onClick={() => {
             closePopup();
@@ -47,6 +48,7 @@ export function Consent() {
         </Button>
 
         <Button
+        href="#"
         className="shadow-md"
           onClick={() => {
             acceptCookie();

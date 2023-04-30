@@ -6,6 +6,7 @@ export const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID;
 export const Provider = ({ children }) => {
   return (
     <Analytics.Provider value={null}>
+      {children}
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=G-${GA_MEASUREMENT_ID}`}
@@ -23,7 +24,6 @@ export const Provider = ({ children }) => {
         `,
         }}
       />
-      {children}
     </Analytics.Provider>
   );
 };

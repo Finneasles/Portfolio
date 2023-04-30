@@ -12,7 +12,9 @@ export const Four0Four = ({ posts }) => {
 
   return (
     <Layout title={title} navbar={false} footer={false} cookieConsent={false}>
-      <Hero />
+      <Hero>
+        <h1>404</h1>
+      </Hero>
       {/* <div className="px-6 py-16 lg:px-32">
         <Cards /> 
         <Posts allPosts={posts} />

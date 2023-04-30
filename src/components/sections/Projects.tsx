@@ -4,7 +4,12 @@ import { Post } from "@/components";
 export const ProjectsSection = ({ allPosts }) => {
   return (
     <section>
-      <h2 className="mb-12 text-left text-2xl font-bold uppercase text-gray-900 dark:text-white md:text-4xl">
+      <h2
+        className={
+          "mb-12 text-left text-2xl font-bold uppercase" +
+          "text-gray-900 dark:text-white md:text-4xl"
+        }
+      >
         Projects
       </h2>
       <div

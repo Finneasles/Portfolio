@@ -1,35 +1,55 @@
-import React from "react";
-import { Button, HeroContainer } from "@/components";
+import React, { Children } from "react";
+import { Button } from "@/components";
 import Image from "next/image";
 
-export const HeroSection = () => {
+export const sizes = [{ lg: 64, md: 48, sm: 32 }];
+
+interface SizeValues {
+  lg: number;
+  md: number;
+  sm: number;
+}
+
+function getSizeValue(sizeKey: keyof SizeValues): number | undefined {
+  const [size] = sizes;
+  return size[sizeKey];
+}
+
+export const HeroSection = ({
+  children,
+  size,
+}: {
+  children: any;
+  size?: string;
+  className?: string;
+}) => {
   return (
-    <HeroContainer>
-      <div className="flex p-6 pb-8 text-left sm:p-8 lg:px-32">
-        <div className="relative w-full place-self-center">
-          <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white dark:text-white md:text-5xl xl:text-6xl">
-            Curabitur in ligula ante. Integer.
-          </h1>
-          <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-            Nam faucibus lorem dolor, ut fermentum augue tincidunt feugiat.
-            Phasellus convallis lorem urna, eget dignissim ante bibendum eu.
-          </p>
-          <div className="space-x-2">
-            <Button href="/about"  size={"sm"} variant={"heroPrimary"}>👋  Let&apos;s Chat</Button>
-            <Button href="/about" size={"sm"} variant={"secondary"}>
-              Leave a message
-            </Button>
-          </div>
-        </div>
-        <div className="relative hidden h-[500px] w-full lg:flex">
-          {/* <Image
+    <div
+      style={{
+        background: "linear-gradient(90deg, #539DF5 0%, #65ABFF 100.02%)",
+      }}
+      className="relative flex h-[80vh] min-h-[150px] content-center items-center justify-center"
+    >
+      {/* <BackgroundLayer /> */}
+      <div className="relative w-full ">
+        <div className="flex flex-wrap items-center">
+          <div className="w-full">
+            <div className="flex p-6 pb-8 text-left sm:p-8 lg:px-32">
+              <div className="relative w-full place-self-center">
+              <div className="w-full">{children}</div>
+              </div>
+              <div className="relative hidden h-[500px] w-full lg:flex">
+                {/* <Image
             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
             alt="mockup"
             layout="fill"
           /> */}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </HeroContainer>
+    </div>
   );
 };
 

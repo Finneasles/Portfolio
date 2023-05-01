@@ -24,7 +24,7 @@ export const HeroSection = ({
   className?: string;
 }) => {
   return (
-    <div
+    <section
       style={{
         background: "linear-gradient(90deg, #539DF5 0%, #65ABFF 100.02%)",
       }}
@@ -32,7 +32,7 @@ export const HeroSection = ({
     >
       {/* <BackgroundLayer /> */}
       <div className="relative w-full ">
-        <div className="flex flex-wrap items-center">
+        <div className="relative w-full flex flex-wrap items-center">
           <div className="w-full">
             <div className="flex p-6 pb-8 text-left sm:p-8 lg:px-32">
               <div className="relative w-full place-self-center">
@@ -49,7 +49,7 @@ export const HeroSection = ({
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

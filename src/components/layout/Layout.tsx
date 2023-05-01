@@ -45,18 +45,20 @@ export const Layout = ({
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
-      setProgress((window.scrollY / window.innerHeight) * 100);
-      // console.log(progress);
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        setProgress((window.scrollY / totalHeight) * 100);
+      }
     };
 
+
     handleScroll();
-    // console.log(window.innerHeight);
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <div>
       <Head>
@@ -74,7 +76,7 @@ export const Layout = ({
           <div className="fixed top-0 z-20 h-1 w-full">
             <div className="h-1 w-full bg-transparent dark:bg-gray-700">
               <div
-                className="h-1 bg-blue-600"
+                className={"h-1 bg-blue-600 transition-all duration-100 ease-out"}
                 style={{ width: `${progress}%` }}
               ></div>
             </div>

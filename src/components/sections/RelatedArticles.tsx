@@ -1,6 +1,4 @@
 import React from "react";
-import { Button, HeroContainer } from "@/components";
-import Image from "next/image";
 
 export const RelatedArticles = () => {
   return (

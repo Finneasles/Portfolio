@@ -43,7 +43,7 @@ export const Footer = () => {
                       placeholder="Enter your email"
                     />
                     <Button
-                      href="!#"
+                      href="#"
                       className="h-12 w-full tracking-wide sm:ml-4 sm:mt-0 sm:w-auto sm:flex-shrink-0"
                       type="submit"
                     >
@@ -56,7 +56,7 @@ export const Footer = () => {
               <div className="col-span-2 flex gap-4 lg:col-span-5">
                 <a
                   className="hover:opacity-75"
-                  href="!#"
+                  href="#"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -78,7 +78,7 @@ export const Footer = () => {
 
                 <a
                   className="hover:opacity-75"
-                  href="!#"
+                  href="#"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -100,7 +100,7 @@ export const Footer = () => {
 
                 <a
                   className="hover:opacity-75"
-                  href="!#"
+                  href="#"
                   target="_blank"
                   rel="noreferrer"
                 >

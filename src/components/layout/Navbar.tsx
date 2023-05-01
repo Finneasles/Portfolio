@@ -11,12 +11,14 @@ type Props = {
   menuData: object;
   variant?: string;
 };
+
 const variants = {
-  primary:
-    "fixed h-[128px] border-transparent border-b-0 text-white",
+  primary: "fixed h-[128px] border-transparent border-b-0 text-white",
   fixed:
-    "fixed h-[96px] bg-gray-100 backdrop-blur-xl dark:border-white/10 dark:bg-gray-900 border-white/10  bg-opacity-80",
+    "fixed h-[96px] bg-gray-100 backdrop-blur-xl dark:border-white/10 " +
+    "dark:bg-gray-900 border-white/10  bg-opacity-80",
 };
+
 export const Navbar = ({ menuData, variant = "primary" }: Props) => {
   const [visible, setMobileMenu] = useState(false);
 
@@ -35,12 +37,10 @@ export const Navbar = ({ menuData, variant = "primary" }: Props) => {
             </div>
           </h1>
         </Link>
-        <div className="w-full">
-          <div className="flex items-center justify-end space-x-5">
-            <Menu data={menuData} />
-            <Buttons />
-            <Burger data={menuData} state={{ visible, setMobileMenu }} />
-          </div>
+        <div className="flex w-full items-center justify-end space-x-5">
+          <Menu data={menuData} />
+          <Buttons />
+          <Burger data={menuData} state={{ visible, setMobileMenu }} />
         </div>
       </div>
     </nav>

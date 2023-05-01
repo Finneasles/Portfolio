@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Grid = () => {
+export const Component = () => {
   const Item = ({ title, description, href }) => {
     return (
       <a href={href}>
@@ -44,4 +44,4 @@ export const Grid = () => {
   );
 };
 
-export default Grid;
+export default Component;

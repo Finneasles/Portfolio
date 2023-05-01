@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { setCookie, hasCookie } from "cookies-next";
-import { Button } from "@/components";
-import {HiInformationCircle} from "react-icons/hi"
-export function Consent() {
+import { HiInformationCircle } from "react-icons/hi";
+
+export function Component() {
   const [consent, setConsent] = useState(true);
   useEffect(() => {
     setConsent(hasCookie("localConsent"));
@@ -31,35 +31,33 @@ export function Consent() {
         consent ? "hidden" : ""
       }`}
     >
-    <HiInformationCircle size={20}/>
+      <HiInformationCircle size={20} />
       <p className="text-slate-200">
-      Cookies are used to collect information about your choices and preferences, and collect information about your use of the sites to improve functionality & enhance experience.
+        Cookies are used to collect information about your choices and
+        preferences, and collect information about your use of the sites to
+        improve functionality & enhance experience.
       </p>
-      <div className="mt-4 flex justify-between align-middle">
-        <Button
-          href="#"
+      <div className="flex justify-between mt-4 align-middle">
+        <button
           className="text-bold"
           onClick={() => {
             closePopup();
           }}
-          variant={"transparent"}
         >
           Close
-        </Button>
+        </button>
 
-        <Button
-        href="#"
-        className="shadow-md"
+        <button
+          className="shadow-md"
           onClick={() => {
             acceptCookie();
           }}
-          variant={"white"}
         >
           Accept All
-        </Button>
+        </button>
       </div>
     </div>
   );
 }
 
-export default Consent;
+export default Component;

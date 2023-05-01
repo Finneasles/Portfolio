@@ -1,7 +1,7 @@
 import React from "react";
 import { Post } from "@/components";
 
-export const ProjectsSection = ({ allPosts }) => {
+export const Section = ({ allPosts }) => {
   return (
     <section>
       <h2
@@ -13,8 +13,7 @@ export const ProjectsSection = ({ allPosts }) => {
         Projects
       </h2>
       <div
-        className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-2
-     lg:grid-cols-2 lg:flex-row lg:gap-4"
+        className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-2 lg:grid-cols-2 lg:flex-row lg:gap-4"
       >
         {allPosts.map((e: any) => {
           return <Post key={e.slug} data={e} />;
@@ -24,4 +23,4 @@ export const ProjectsSection = ({ allPosts }) => {
   );
 };
 
-export default ProjectsSection;
+export default Section;

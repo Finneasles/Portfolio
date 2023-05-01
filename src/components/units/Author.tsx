@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
-export const Author = ({ data }) => {
+export const Component = ({ data }) => {
   return (
-    <address className="mb-8 flex w-full items-center space-x-4 text-sm text-gray-900 dark:text-white">
+    <address className="flex items-center w-full mb-8 text-sm text-gray-900 space-x-4 dark:text-white">
       <div className="relative h-[64px] w-[64px]">
         <Image
-          className="mr-4 h-16 w-16 rounded-full"
+          className="w-16 h-16 mr-4 rounded-full"
           src={data.image}
           alt="Jese Leos"
           layout="fill"
@@ -33,4 +33,4 @@ export const Author = ({ data }) => {
   );
 };
 
-export default Author;
+export default Component;

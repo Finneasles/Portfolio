@@ -14,7 +14,7 @@ type Props = {
 };
 const variants = {
   primary:
-    "uppercase text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300" +
+    "uppercase text-white bg-[#408FED] hover:bg-blue-800 focus:ring-blue-300" +
     "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
   heroPrimary:
     "uppercase text-blue bg-white hover:bg-blue-800 focus:ring-blue-300" +
@@ -23,8 +23,8 @@ const variants = {
     "uppercase text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300" +
     "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
   secondary:
-    "uppercase text-blue-600 hover:bg-blue-800 focus:ring-blue-300" +
-    "dark:text-white bg-opacity-20 dark:bg-opacity-10 bg-blue-700 hover:dark:bg-opacity-20 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
+    "uppercase text-blue-600 hover:bg-blue-800 focus:ring-blue-300 text-[#0056BD]" +
+    "dark:text-white bg-opacity-70 hover:dark:bg-opacity-20 dark:focus:ring-blue-800",
   white:
     "uppercase text-blue-700 bg-white hover:text-white hover:bg-opacity-60 focus:ring-yellow-300",
   transparent:
@@ -40,7 +40,7 @@ const sizes = {
   lg: "py-[4rem] px-12",
 };
 
-export const Button = ({
+export const Component = ({
   children,
   className,
   href,
@@ -69,4 +69,4 @@ export const Button = ({
   );
 };
 
-export default Button;
+export default Component;

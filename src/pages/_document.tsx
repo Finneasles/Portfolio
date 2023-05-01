@@ -8,11 +8,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <body
-          className="bg-grey-100 text-black
-          dark:bg-gray-900 dark:text-white"
+          className="text-black bg-white bg-gradient-to-b dark:from-[#00162D] dark:to-[#000] dark:text-white"
         >
-          <Main />
           <NextScript />
+          <Main />
         </body>
       </Html>
     );

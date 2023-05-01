@@ -4,7 +4,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
-      greeting: "Hello, {{name}}!",
+      hero_subtitle0: "Hello! I'm a",
     },
   },
   fr: {
@@ -18,7 +18,6 @@ i18n.use(initReactI18next).init({
   resources,
   lng: "en",
   fallbackLng: "en",
-
   interpolation: {
     escapeValue: false,
   },

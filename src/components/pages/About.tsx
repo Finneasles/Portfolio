@@ -1,27 +1,27 @@
 import {
-  CardSection as Cards,
   HeroSection as Hero,
   Layout,
   ProjectsSection as Projects,
 } from "@/components";
 import { useState } from "react";
 
-export const AboutPage = ({ pageTitle }) => {
+export const Page = ({ pageTitle }) => {
   const [title] = useState(pageTitle);
   return (
     <Layout title={title}>
       <Hero size="sm">
-        <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white dark:text-white md:text-5xl xl:text-6xl">
+        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white dark:text-white md:text-5xl xl:text-6xl">
           Curabitur in ligula ante. Integer.
         </h1>
       </Hero>
       <div className="px-6 py-16 lg:px-32">
         <section className="bg-white dark:bg-gray-900">
-          <div className="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
+          <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
             <div className="max-w-screen-lg text-gray-500 dark:text-gray-400 sm:text-lg">
               <h2 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
                 Powering innovation at{" "}
-                <span className="font-extrabold">200,000+</span> companies worldwide
+                <span className="font-extrabold">200,000+</span> companies
+                worldwide
               </h2>
               <p className="mb-4 font-light">
                 Track work across the enterprise through an open, collaborative
@@ -37,17 +37,17 @@ export const AboutPage = ({ pageTitle }) => {
               </p>
               <a
                 href="#"
-                className="text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700 inline-flex items-center font-medium"
+                className="inline-flex items-center font-medium text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700"
               >
                 Learn more
                 <svg
-                  className="ml-1 h-6 w-6"
+                  className="w-6 h-6 ml-1"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                     clip-rule="evenodd"
                   ></path>
@@ -61,4 +61,4 @@ export const AboutPage = ({ pageTitle }) => {
   );
 };
 
-export default AboutPage;
+export default Page;

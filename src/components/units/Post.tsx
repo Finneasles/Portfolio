@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components";
 
-export const Post = ({ data }) => {
+export const Component = ({ data }) => {
   const Tag = ({ children }) => {
     return (
       <span className="bg-primary-100 text-primary-800 dark:bg-primary-200 dark:text-primary-800 inline-flex items-center rounded px-2.5 py-0.5 text-xs font-medium">
@@ -12,10 +12,14 @@ export const Post = ({ data }) => {
     );
   };
   return (
-    <article 
-    style={{background: "linear-gradient(90deg, rgba(173, 211, 255, 0.08) 0%, rgba(83, 157, 245, 0.08) 100.02%)"}}
-    className="rounded-sm p-6 shadow-md">
-      <div className="mb-5 flex items-center justify-between text-gray-500">
+    <article
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(173, 211, 255, 0.08) 0%, rgba(83, 157, 245, 0.08) 100.02%)",
+      }}
+      className="p-6 rounded-sm shadow-md"
+    >
+      <div className="flex items-center justify-between mb-5 text-gray-500">
         <div className="flex">
           {data.frontMatter.categories.map((tag: string) => {
             return <Tag key={tag}>{tag}</Tag>;
@@ -34,12 +38,12 @@ export const Post = ({ data }) => {
       </p>
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <div className="flex w-full flex-col-reverse lg:flex-row lg:space-y-0 lg:space-x-2">
-            <Button href={"publications/" + data.slug} >Read Article</Button>
-            <div className="mb-5 flex space-x-2">
+          <div className="flex flex-col-reverse w-full lg:flex-row lg:space-y-0 lg:space-x-2">
+            <Button href={"publications/" + data.slug}>Read Article</Button>
+            <div className="flex mb-5 space-x-2">
               <div className="relative h-7 w-7">
                 <Image
-                  className="h-7 w-7 rounded-full"
+                  className="rounded-full h-7 w-7"
                   src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                   alt="Jese Leos avatar"
                   layout="fill"
@@ -56,4 +60,4 @@ export const Post = ({ data }) => {
   );
 };
 
-export default Post;
+export default Component;

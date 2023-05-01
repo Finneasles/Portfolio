@@ -1,9 +1,9 @@
 import React from "react";
 
-export const BackgroundLayer = () => {
+export const Component = () => {
   return (
     <div
-      className="absolute top-0 h-full w-full bg-cover bg-center"
+      className="absolute top-0 w-full h-full bg-center bg-cover"
       style={{
         backgroundImage:
           " url('https://static.vecteezy.com/system/resources/previews/002/070/994/original/abstract-blue-grid-perspective-design-background-with-lighting-high-technology-lines-landscape-connect-of-future-vector.jpg')",
@@ -11,9 +11,9 @@ export const BackgroundLayer = () => {
     >
       <span
         id="blackOverlay"
-        className="absolute h-full w-full bg-black opacity-50 dark:opacity-75"
+        className="absolute w-full h-full bg-black opacity-50 dark:opacity-75"
       ></span>
     </div>
   );
 };
-export default BackgroundLayer;
+export default Component;

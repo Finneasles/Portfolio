@@ -1,6 +1,6 @@
 import React from "react";
 
-export const MobileMenu = ({ data, state }) => {
+export const Component = ({ data, state }) => {
   return (
     <div className="md:hidden">
       {state.visible ? (
@@ -9,14 +9,14 @@ export const MobileMenu = ({ data, state }) => {
             <div className="px-8 pt-8 pb-6">
               <button
                 onClick={() => state.setMobileMenu(!state.visible)}
-                className="float-right -mr-2 mb-3"
+                className="float-right mb-3 -mr-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   stroke="currentColor"
                   aria-hidden="true"
-                  className="h-6 w-6"
+                  className="w-6 h-6"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -45,10 +45,13 @@ export const MobileMenu = ({ data, state }) => {
           </div>
         </div>
       ) : (
-        <button aria-label="Burger Menu" onClick={() => state.setMobileMenu(!state.visible)}>
+        <button
+          aria-label="Burger Menu"
+          onClick={() => state.setMobileMenu(!state.visible)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
+            className="w-6 h-6"
             fill="white"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -66,4 +69,4 @@ export const MobileMenu = ({ data, state }) => {
   );
 };
 
-export default MobileMenu;
+export default Component;

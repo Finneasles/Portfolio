@@ -1,20 +1,19 @@
 import {
-  CardSection as Cards,
   HeroSection as Hero,
   Layout,
   PublicationsSection as Publications,
 } from "@/components";
 import { useState } from "react";
 
-export const PublicationsPage = ({ posts, pageTitle }) => {
+export const Page = ({ posts, pageTitle }) => {
   const [title] = useState(pageTitle);
   return (
     <Layout title={title}>
       <Hero>
-        <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white dark:text-white md:text-5xl xl:text-6xl">
+        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white dark:text-white md:text-5xl xl:text-6xl">
           Curabitur in ligula ante. Integer.
         </h1>
-        <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
+        <p className="max-w-2xl mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
           Nam faucibus lorem dolor, ut fermentum augue tincidunt feugiat.
           Phasellus convallis lorem urna, eget dignissim ante bibendum eu.
         </p>
@@ -26,4 +25,4 @@ export const PublicationsPage = ({ posts, pageTitle }) => {
   );
 };
 
-export default PublicationsPage;
+export default Page;

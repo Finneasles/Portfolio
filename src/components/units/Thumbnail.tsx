@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 
-export const Thumbnail = ({ alt, caption }) => {
+export const Component = ({ alt, caption }) => {
   return (
     <figure>
-      <div className="relative h-60 w-full md:h-80 lg:h-96">
+      <div className="relative w-full h-60 md:h-80 lg:h-96">
         <Image
           src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png"
           alt={alt}
@@ -19,4 +19,4 @@ export const Thumbnail = ({ alt, caption }) => {
   );
 };
 
-export default Thumbnail;
+export default Component;

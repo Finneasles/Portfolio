@@ -15,7 +15,7 @@ function getSizeValue(sizeKey: keyof SizeValues): number | undefined {
   return size[sizeKey];
 }
 
-export const HeroSection = ({
+export const Section = ({
   children,
   size,
 }: {
@@ -32,7 +32,7 @@ export const HeroSection = ({
     >
       {/* <BackgroundLayer /> */}
       <div className="relative w-full ">
-        <div className="relative w-full flex flex-wrap items-center">
+        <div className="relative flex flex-wrap items-center w-full">
           <div className="w-full">
             <div className="flex p-6 pb-8 text-left sm:p-8 lg:px-32">
               <div className="relative w-full place-self-center">
@@ -53,4 +53,4 @@ export const HeroSection = ({
   );
 };
 
-export default HeroSection;
+export default Section;

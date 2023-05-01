@@ -51,7 +51,6 @@ export const Layout = ({
       }
     };
 
-
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -73,10 +72,12 @@ export const Layout = ({
       </Head>
       {navbar ? (
         <>
-          <div className="fixed top-0 z-20 h-1 w-full">
-            <div className="h-1 w-full bg-transparent dark:bg-gray-700">
+          <div className="fixed top-0 z-20 w-full h-1">
+            <div className="w-full h-1 bg-transparent dark:bg-gray-700">
               <div
-                className={"h-1 bg-blue-600 transition-all duration-100 ease-out"}
+                className={
+                  "h-1 bg-blue-600 transition-all duration-100 ease-out"
+                }
                 style={{ width: `${progress}%` }}
               ></div>
             </div>

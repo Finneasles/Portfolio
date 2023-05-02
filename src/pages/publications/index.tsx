@@ -1,8 +1,16 @@
 import { PublicationsPage } from "@/components";
 import { getAllPostsWithFrontMatter } from "@/utils";
+import { useRouter } from "next/router";
 
 export default function Home({ postsData }) {
-  return <PublicationsPage pageTitle={"Publications"} posts={postsData} />;
+  const router = useRouter();
+  return (
+    <PublicationsPage
+      pageTitle={"Publications"}
+      router={router}
+      posts={postsData}
+    />
+  );
 }
 
 export async function getStaticProps() {

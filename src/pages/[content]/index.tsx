@@ -1,11 +1,13 @@
 import { ContentPage } from "@/components";
 import { getFiles, getPostBySlug } from "@/utils";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
+import { useRouter } from "next/router";
 
 
 function Content({ frontMatter, markdownBody }) {
+  const router = useRouter();
   return (
-    <ContentPage source={{ frontMatter, markdownBody }}/>
+    <ContentPage source={{ frontMatter, markdownBody }} router={router}/>
   );
 }
 

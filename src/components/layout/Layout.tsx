@@ -5,6 +5,7 @@ import {
 import { CookieConsent, Footer, Navbar } from "@/components";
 import React, { ReactNode, useEffect, useState } from "react";
 import Head from "next/head";
+import { NextRouter } from "next/router";
 
 type Props = {
   children?: ReactNode;
@@ -12,6 +13,7 @@ type Props = {
   footer?: boolean;
   navbar?: boolean;
   cookieConsent?: boolean;
+  router: NextRouter;
 };
 
 const navData = [
@@ -36,6 +38,7 @@ const navData = [
 export const Layout = ({
   children,
   title = defaultTitle(),
+  router,
   cookieConsent = true,
   footer = true,
   navbar = true,
@@ -73,10 +76,10 @@ export const Layout = ({
       {navbar ? (
         <>
           <div className="fixed top-0 z-20 w-full h-1">
-            <div className="w-full h-1 bg-transparent dark:bg-gray-700">
+            <div className="w-full h-1 bg-transparent ">
               <div
                 className={
-                  "h-1 bg-blue-600 transition-all duration-100 ease-out"
+                  "h-1 bg-[#408FED] transition-all duration-100 ease-out"
                 }
                 style={{ width: `${progress}%` }}
               ></div>
@@ -86,6 +89,7 @@ export const Layout = ({
             <Navbar
               menuData={navData}
               variant={scrollY > 100 ? "fixed" : "primary"}
+              router={router}
             />
           </header>
         </>

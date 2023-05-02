@@ -34,7 +34,7 @@ export const Section = ({
       <div className="relative w-full ">
         <div className="relative flex flex-wrap items-center w-full">
           <div className="w-full">
-            <div className="flex p-6 pb-8 text-left sm:p-8 lg:px-32">
+            <div className="flex p-6 py-12 pb-8 text-left sm:p-8 lg:px-32">
               <div className="relative w-full place-self-center">
               <div className="w-full">{children}</div>
               </div>

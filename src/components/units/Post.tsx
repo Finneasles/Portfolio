@@ -17,8 +17,15 @@ export const Component = ({ data }) => {
         background:
           "linear-gradient(90deg, rgba(173, 211, 255, 0.08) 0%, rgba(83, 157, 245, 0.08) 100.02%)",
       }}
-      className="p-6 rounded-sm shadow-md"
+      className="p-4 rounded-sm shadow-md"
     >
+      <div
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(84, 158, 246, 0.1536) 0%, rgba(84, 158, 246, 0.4608) 100%)",
+        }}
+        className="w-full aspect-video"
+      ></div>
       <div className="flex items-center justify-between mb-5 text-gray-500">
         <div className="flex">
           {data.frontMatter.categories.map((tag: string) => {
@@ -27,7 +34,6 @@ export const Component = ({ data }) => {
         </div>{" "}
         <span className="text-sm">14 days ago</span>
       </div>
-
       <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         <Link href={"publications/" + data.slug}>
           <a>{data.frontMatter.title}</a>

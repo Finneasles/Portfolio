@@ -5,10 +5,10 @@ import {
 } from "@/components";
 import { useState } from "react";
 
-export const Page = ({ pageTitle }) => {
+export const Page = ({ pageTitle, router }) => {
   const [title] = useState(pageTitle);
   return (
-    <Layout title={title}>
+    <Layout title={title} router={router}>
       <Hero size="sm">
         <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white dark:text-white md:text-5xl xl:text-6xl">
           Curabitur in ligula ante. Integer.

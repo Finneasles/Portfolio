@@ -8,7 +8,7 @@ import {
 } from "@/components";
 import { useState } from "react";
 
-export const Page = ({ source }) => {
+export const Page = ({ source,router }) => {
   const [author] = useState(source.frontMatter.author);
   const [title] = useState(source.frontMatter.title);
   const [description] = useState(source.frontMatter.description);
@@ -19,7 +19,7 @@ export const Page = ({ source }) => {
   const [relatedArticles] = useState(source.frontMatter.relatedArticles);
 
   return (
-    <Layout title={title}>
+    <Layout title={title} router={router}>
       <div>
         <main className="px-6 pt-32 pb-16 bg-white dark:bg-gray-900 lg:px-32 lg:pt-60 lg:pb-32">
           <article className="w-full format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">

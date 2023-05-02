@@ -40,7 +40,7 @@ const sizes = {
   lg: "py-[4rem] px-12",
 };
 
-export const Component = ({
+export const Button = ({
   children,
   className,
   href,
@@ -69,4 +69,4 @@ export const Component = ({
   );
 };
 
-export default Component;
+export default Button;

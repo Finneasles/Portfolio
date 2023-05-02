@@ -1,8 +1,10 @@
 import { Four0FourPage } from "@/components";
 import { getAllPostsWithFrontMatter } from "@/utils";
+import { useRouter } from "next/router";
 
 export default function Home({ postsData }) {
-  return <Four0FourPage posts={postsData}/>;
+  const router = useRouter();
+  return <Four0FourPage posts={postsData} router={router}/>;
 }
 
 export async function getStaticProps() {

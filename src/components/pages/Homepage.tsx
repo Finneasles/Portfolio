@@ -10,20 +10,20 @@ import { useTranslation } from "react-i18next";
 
 
 const pageTitle = "Home";
-export const Page = ({ posts }) => {
+export const Page = ({ posts ,router}) => {
   const [title] = useState(pageTitle);
   const { t } = useTranslation();
   return (
-    <Layout title={title}>
+    <Layout title={title} router={router}>
       <Hero>
         <h1
           style={{ color: "rgba(255, 255, 255, 0.48)" }}
-          className="max-w-2xl mb-4 text-2xl font-normal leading-none tracking-tight normal-case md:text-4xl"
+          className="max-w-2xl mb-4 text-xl font-normal leading-none tracking-tight normal-case md:text-4xl"
         >
           {t("hero_subtitle0")}
         </h1>
-        <h2 className="flex flex-col max-w-2xl mb-4 text-6xl font-bold leading-none tracking-tight text-white uppercase font-Poppins md:text-8xl">
-          <span className={"p-8 "} style={{ background: "#FFC700" }}>
+        <h2 className="flex flex-col max-w-2xl mb-4 text-4xl font-bold leading-none tracking-tight text-white uppercase font-Poppins md:text-6xl">
+          <span className={"p-4 mb-2 rounded-md"} style={{ background: "#FFC700" }}>
             JavaScript
           </span>
           <span>Developer</span>
@@ -31,7 +31,7 @@ export const Page = ({ posts }) => {
         <div className="relative">
           <div
             style={{ background: "rgba(64, 143, 237, 0.7)" }}
-            className="max-w-2xl p-4 mb-6 font-light text-white md:text-lg lg:mb-8 lg:text-xl"
+            className="max-w-2xl p-4 mb-6 font-light text-white rounded-md md:text-lg lg:mb-8 lg:text-xl"
           >
             <p>
               Nam faucibus lorem dolor, ut fermentum augue tincidunt feugiat.

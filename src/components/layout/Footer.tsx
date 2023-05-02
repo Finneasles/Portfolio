@@ -18,7 +18,7 @@ export const Footer = () => {
             <span className="block w-32 h-10 bg-gray-400 rounded-sm dark:bg-gray-700"></span>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+          <div className="grid grid-cols-2 gap-8 mt-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
             <div className="col-span-2">
               <div>
                 <h2 className="text-2xl font-bold">Get the latest news!</h2>
@@ -126,7 +126,13 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="px-6 py-12 mt-12 bg-gray-200 border-t border-gray-200 dark:border-white/10 dark:bg-gray-800 lg:px-32">
+      <div
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0, 53, 108, 0.16) 0.18%, rgba(173, 211, 255, 0) 100.18%)",
+        }}
+        className="px-6 py-12 mt-12 border-t border-gray-200 dark:border-white/10 lg:px-32"
+      >
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <p className="text-xs text-left">
             Copyright &copy; {new Date().getFullYear()}.{" "}

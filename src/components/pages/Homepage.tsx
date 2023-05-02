@@ -8,6 +8,7 @@ import {
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+
 const pageTitle = "Home";
 export const Page = ({ posts }) => {
   const [title] = useState(pageTitle);
@@ -17,20 +18,20 @@ export const Page = ({ posts }) => {
       <Hero>
         <h1
           style={{ color: "rgba(255, 255, 255, 0.48)" }}
-          className="max-w-2xl mb-4 text-2xl font-bold leading-none tracking-tight normal-case sourceFamily md:text-4xl"
+          className="max-w-2xl mb-4 text-2xl font-normal leading-none tracking-tight normal-case md:text-4xl"
         >
           {t("hero_subtitle0")}
         </h1>
-        <h2 className="flex flex-col max-w-2xl mb-4 text-6xl leading-none tracking-tight text-white md:text-8xl">
-          <span className={"p-8"} style={{ background: "#FFC700" }}>
+        <h2 className="flex flex-col max-w-2xl mb-4 text-6xl font-bold leading-none tracking-tight text-white uppercase font-Poppins md:text-8xl">
+          <span className={"p-8 "} style={{ background: "#FFC700" }}>
             JavaScript
           </span>
-          <span className="large-text">Developer</span>
+          <span>Developer</span>
         </h2>
         <div className="relative">
           <div
             style={{ background: "rgba(64, 143, 237, 0.7)" }}
-            className="max-w-2xl p-4 mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl"
+            className="max-w-2xl p-4 mb-6 font-light text-white md:text-lg lg:mb-8 lg:text-xl"
           >
             <p>
               Nam faucibus lorem dolor, ut fermentum augue tincidunt feugiat.

@@ -30,6 +30,7 @@ export const Page = ({ source,router }) => {
               {description ? <p className="mb-12">{description}</p> : null}
               {thumbnail ? (
                 <Thumbnail
+                src={thumbnail}
                   alt={title + " Thumbnail"}
                   caption={thumbnailCaption}
                 />

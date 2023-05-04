@@ -50,7 +50,7 @@ export const Footer = () => {
                   />
                   <Button
                     href="#"
-                    className="w-full h-12 tracking-wide sm:ml-4 sm:mt-0 sm:w-auto sm:flex-shrink-0"
+                    className="w-full h-12 px-4 tracking-wide sm:ml-4 sm:mt-0 sm:w-auto sm:flex-shrink-0"
                     type="submit"
                   >
                     Sign Up

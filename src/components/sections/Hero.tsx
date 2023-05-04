@@ -26,24 +26,26 @@ export const Section = ({
   return (
     <section
       style={{
-        background: "linear-gradient(90deg, #539DF5 0%, #65ABFF 100.02%)",
+        background: "linear-gradient(90deg, #539DF5 0%, #65ABFF 100%)",
       }}
       className="relative flex h-[80vh] min-h-[150px] content-center items-center justify-center"
     >
       {/* <BackgroundLayer /> */}
       <div className="relative w-full ">
-        <div className="relative flex flex-wrap items-center w-full">
-          <div className="w-full">
-            <div className="flex p-6 py-12 pb-8 text-left sm:p-8 lg:px-32">
-              <div className="relative w-full place-self-center">
-              <div className="w-full">{children}</div>
+        <div className="relative flex w-full flex-wrap items-center">
+          <div className="w-full ">
+            <div className="flex p-6 py-24 pb-8 text-left sm:p-8 lg:px-32">
+              <div className="z-10 w-full place-self-center">
+                <div className="w-full">{children}</div>
               </div>
-              <div className="relative hidden h-[500px] w-full lg:flex">
-                {/* <Image
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-            alt="mockup"
-            layout="fill"
-          /> */}
+              <div className="relative hidden h-[500px] w-full items-center justify-end md:flex lg:flex">
+                <div
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0) 100%)",
+                  }}
+                  className="h-[416px] w-[416px] rounded-full"
+                ></div>
               </div>
             </div>
           </div>

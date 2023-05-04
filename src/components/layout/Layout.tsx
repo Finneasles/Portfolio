@@ -6,6 +6,7 @@ import { CookieConsent, Footer, Navbar } from "@/components";
 import React, { ReactNode, useEffect, useState } from "react";
 import Head from "next/head";
 import { NextRouter } from "next/router";
+import { useScrollProgress } from "@/hooks";
 
 type Props = {
   children?: ReactNode;
@@ -43,23 +44,7 @@ export const Layout = ({
   footer = true,
   navbar = true,
 }: Props) => {
-  const [scrollY, setScrollY] = useState(0);
-  const [progress, setProgress] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-      const totalHeight = document.body.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        setProgress((window.scrollY / totalHeight) * 100);
-      }
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const { scrollY, progress } = useScrollProgress();
 
   return (
     <div>
@@ -72,11 +57,20 @@ export const Layout = ({
         width=device-width"
         />
         <meta name="description" content={process.env.NEXT_PUBLIC_DESC} />
+        <meta property="og:title" content={title} />
+        <meta
+          property="og:description"
+          content={process.env.NEXT_PUBLIC_DESC}
+        />
+        <meta
+          property="og:image"
+          content="./images/thumb-unset.jpg"
+        />
       </Head>
       {navbar ? (
         <>
-          <div className="fixed top-0 z-20 w-full h-1">
-            <div className="w-full h-1 bg-transparent ">
+          <div className="fixed top-0 z-[99] h-1 w-full">
+            <div className="h-1 w-full bg-transparent ">
               <div
                 className={
                   "h-1 bg-[#408FED] transition-all duration-100 ease-out"
@@ -88,6 +82,7 @@ export const Layout = ({
           <header>
             <Navbar
               menuData={navData}
+              scrollY={scrollY}
               variant={scrollY > 100 ? "fixed" : "primary"}
               router={router}
             />

@@ -12,6 +12,7 @@ type Props = {
   menuData: object;
   variant?: string;
   router: NextRouter;
+  scrollY: number;
 };
 
 const variants = {
@@ -21,26 +22,25 @@ const variants = {
     "dark:bg-gray-900 border-white/10  bg-opacity-80",
 };
 
-export const Navbar = ({ router, menuData, variant = "primary" }: Props) => {
+export const Navbar = ({ scrollY, router, menuData, variant = "primary" }: Props) => {
   const [visible, setMobileMenu] = useState(false);
-
   return (
     <nav
       aria-label="Site Navigation"
-      className={`transition-all ${variants[variant]} z-10  w-full border-b px-6 lg:px-32`}
+      className={`transition-all ${variants[variant]} z-[98]  w-full border-b px-6 lg:px-32`}
     >
       <div className="flex items-center justify-between w-full h-full mx-auto text-sm">
         <Link href="/">
           <div className="flex items-center text-center">
             <div className="lg:flex lg:gap-8">
-              <div className="flex space-x-2">
-              <span className="flex items-center justify-center text-2xl font-black text-white uppercase rounded-sm text-opacity-70">f1n</span>
-              <span className="flex items-center justify-center px-2 uppercase bg-white bg-opacity-70 text-[#57A0F7] rounded-sm text-2xl font-black">.dev</span>
+              <div className="flex space-x-2 ">
+              <span className="flex items-center text-3xl justify-center font-black text-white uppercase rounded-sm text-opacity-70">f1n</span>
+              <span className={`flex ${scrollY > 100 ? "text-[#00162D]" : "text-[#57A0F7]"} items-center text-2xl justify-center px-1 uppercase bg-white bg-opacity-70 rounded font-black`}>.dev</span>
               </div>
             </div>
           </div>
         </Link>
-        <div className="flex items-center justify-end w-full space-x-5">
+        <div className="flex items-center justify-end w-full space-x-2">
           <Menu data={menuData} router={router} />
           <Buttons />
           <Burger data={menuData} state={{ visible, setMobileMenu }} />

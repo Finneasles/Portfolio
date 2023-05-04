@@ -15,15 +15,15 @@ type Props = {
 };
 const variants = {
   primary:
-    "uppercase text-white bg-[#408FED] hover:bg-blue-800 focus:ring-blue-300" +
+    "uppercase text-white bg-[#408FED] font-bold hover:bg-blue-800 focus:ring-blue-300" +
     "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
   heroPrimary:
-    "uppercase text-[#0D4380] bg-white hover:bg-blue-800 focus:ring-blue-300" +
+    "font-bold uppercase text-[#0D4380] bg-white hover:bg-blue-800 focus:ring-blue-300" +
     "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
   heroSecondary:
     "uppercase text-white ring-0",
   secondary:
-    "uppercase text-blue-600 hover:bg-blue-800 focus:ring-blue-300 text-[#0056BD]" +
+    "uppercase text-blue-600 hover:bg-opacity-32 hover:text-white focus:ring-blue-300 text-[#0056BD]" +
     "dark:text-white bg-opacity-70 hover:dark:bg-opacity-20 dark:focus:ring-blue-800",
   white:
     "uppercase text-blue-700 bg-white hover:text-white hover:bg-opacity-60 focus:ring-yellow-300",
@@ -62,7 +62,7 @@ export const Button = ({
       className={cls(
         size ? sizes[size] : null,
         className,
-        `inline-flex select-none items-center rounded-md py-3 text-sm font-medium ${variants[variant]} cursor-pointer focus:outline-none`,
+        `inline-flex select-none items-center rounded py-3 text-sm ${variants[variant]} cursor-pointer focus:outline-none`,
       )}
     >
       {children || (icon ? null : "Dolor Sit")}

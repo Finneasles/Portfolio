@@ -1,47 +1,55 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-const useTypingEffect = (textArr, delay = 1000, interval = 100, stopTime = 1000) => {
-  const [displayText, setDisplayText] = useState('');
-  const [index, setIndex] = useState(0);
-  const [shouldStop, setShouldStop] = useState(false);
+const useTypingEffect = ({
+  text,
+  typingDelay = 20,
+  deletingDelay = 15,
+  pauseDelay = 7500,
+}: {
+  text: any[];
+  typingDelay?: number;
+  deletingDelay?: number;
+  pauseDelay?: number;
+}) => {
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const currentText = textArr[index];
+    const currentText = text[currentIndex];
 
-    if (shouldStop) {
-      setTimeout(() => {
-        setShouldStop(false);
-        setIndex(index + 1);
-        setDisplayText('');
-      }, stopTime);
-      return;
+    let timer;
+
+    if (!isDeleting) {
+      // adding text
+      timer = setTimeout(() => {
+        setDisplayText(currentText.substring(0, displayText.length + 1));
+        if (displayText.length === currentText.length) {
+          timer = setTimeout(() => {setIsDeleting(true);}, pauseDelay);
+        }
+      }, typingDelay);
+    } else {
+      // deleting text
+      timer = setTimeout(() => {
+        setDisplayText(currentText.substring(0, displayText.length - 1));
+        if (displayText.length === 0) {
+          // switch to typing mode
+          setIsDeleting(false);
+            setCurrentIndex((currentIndex + 1) % text.length)
+        }
+      }, deletingDelay);
     }
 
-    const timer = setTimeout(() => {
-      if (currentText.length > displayText.length) {
-        setDisplayText(currentText.slice(0, displayText.length + 1));
-      } else {
-        setShouldStop(true);
-      }
-    }, interval);
-
     return () => clearTimeout(timer);
-  }, [displayText, index, interval, shouldStop, stopTime, textArr]);
-
-  useEffect(() => {
-    if (index === textArr.length) {
-      setIndex(0);
-    }
-  }, [index, textArr.length]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShouldStop(false);
-      setDisplayText('');
-      setIndex(0);
-    }, delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
+  }, [
+    displayText,
+    currentIndex,
+    isDeleting,
+    text,
+    typingDelay,
+    deletingDelay,
+    pauseDelay,
+  ]);
 
   return displayText;
 };

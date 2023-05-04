@@ -1,1 +1,1 @@
-export * from "./typeEffect";
+export { default as useTypingEffect } from "./typeEffect";

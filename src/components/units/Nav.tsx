@@ -12,12 +12,12 @@ export const Component = ({ data, router }) => {
 
   return (
     <div className="flex grow md:justify-center lg:justify-end">
-      <nav className="items-center hidden px-2 space-x-6 uppercase md:flex">
+      <nav className="items-center hidden px-2 space-x-6 uppercase drop-shadow-md md:flex ">
         {data.map((e: { name: string; href: string | UrlObject }) => {
           return (
             <Link key={e.name} href={e.href}>
               <a
-                className={`text-white hover:text-opacity-100 ${
+                className={`dark:text-white text-black hover:text-opacity-100 ${
                   e.href === currentPathname
                     ? "text-opacity-100"
                     : undefined === currentPathname && e.href === "/"

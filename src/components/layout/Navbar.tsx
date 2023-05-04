@@ -33,8 +33,9 @@ export const Navbar = ({ router, menuData, variant = "primary" }: Props) => {
         <Link href="/">
           <div className="flex items-center text-center">
             <div className="lg:flex lg:gap-8">
-              <div>
-                <span className="block h-10 w-[2.5rem] rounded-sm bg-gray-400 dark:bg-gray-700 md:w-[10rem] lg:w-[10rem]"></span>
+              <div className="flex space-x-2">
+              <span className="flex items-center justify-center text-2xl font-black text-white uppercase rounded-sm text-opacity-70">f1n</span>
+              <span className="flex items-center justify-center px-2 uppercase bg-white bg-opacity-70 text-[#57A0F7] rounded-sm text-2xl font-black">.dev</span>
               </div>
             </div>
           </div>

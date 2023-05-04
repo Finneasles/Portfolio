@@ -8,7 +8,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <body
-          className="text-black bg-white dark:bg-[#00162D] bg-gradient-to-b dark:from-[#00162D] dark:to-[#000] dark:text-white"
+          className="text-black bg-white dark:bg-[#101727] bg-gradient-to-b dark:from-[#00162D] dark:to-[#000] dark:text-white"
         >
           <NextScript />
           <Main />

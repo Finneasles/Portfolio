@@ -4,7 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["flowbite.s3.amazonaws.com"],
+    domains: ["flowbite.s3.amazonaws.com","repository-images.githubusercontent.com"],
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {

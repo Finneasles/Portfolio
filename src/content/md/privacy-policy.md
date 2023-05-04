@@ -1,20 +1,29 @@
 ---
-title: "Lorem ipsum1"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at interdum leo, sed porttitor lorem."
-categories: [ "Lorem","Ipsum" ]
+title: "Privacy Policy"
+description: "Learn how cookies are used & how we handle information. Read our Privacy Policy for details."
+categories: []
 date: "Mar 25, 2022"
 ---
 
-consectetur adipiscing elit. Etiam mollis dapibus libero, vitae sagittis libero pharetra vel. Donec at ligula est. Donec tincidunt tortor quis leo vulputate ornare. Pellentesque massa nulla, volutpat at odio non, lacinia posuere quam. Nullam diam mi, cursus ultricies lacinia quis, suscipit sit amet nisl. Phasellus ullamcorper fermentum eros, vulputate congue est tempus quis.
+## Personal Data
 
-## Sed tincidunt purus nisi
+This website does not collect or store any personally identifiable information. However, please note that when you visit this website, some information is automatically collected by the web server, such as your IP address, browser type and version, and operating system. This information is used solely for the purpose of monitoring and improving the performance and security of this website.
 
-eu tristique libero commodo at. Morbi aliquam purus ex, eget scelerisque arcu malesuada in. Vestibulum quis nisi volutpat nunc semper gravida. Morbi molestie, risus sed semper ullamcorper, neque massa ullamcorper dolor, eget rutrum dolor sem vel diam. Etiam non luctus magna, eget dictum ex.
+## Cookies
 
-```js
+This website uses cookies to enhance your browsing experience. A cookie is a small text file that is stored on your device by your web browser. Cookies do not contain any personally identifiable information. They are used to remember your preferences, such as language settings, and to provide anonymized tracking data to third-party analytics services, such as Google Analytics.
 
-function Hello(){
-    console.log("Hello World")
-}
+By using this website, you consent to the use of cookies. If you do not wish to accept cookies, you can disable them in your web browser's settings.
 
-```
+## Third-Party Services
+
+This website may use third-party services, such as Google Analytics, to collect anonymized usage data. These services may use cookies to track your browsing activity on this website. The data collected is used solely for the purpose of analyzing and improving the performance and user experience of this website.
+
+Please note that this privacy policy does not apply to any third-party services that may be used by this website. Please refer to the privacy policies of these services for more information.
+
+## Changes to this Policy
+
+This privacy policy may be updated from time to time without prior notice. Please check this page regularly for any updates.
+
+If you have any questions or concerns about this privacy policy, please contact me at contact@f1n.dev.
+

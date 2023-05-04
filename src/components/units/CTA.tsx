@@ -1,18 +1,18 @@
 import React from "react";
-import { AiFillMail } from "react-icons/ai";
+import { FaUser } from "react-icons/fa";
 import { Button } from "@/components";
 
 export const Component = () => {
   return (
-    <div className="flex justify-between space-x-1">
+    <div className="flex justify-between space-x-1 drop-shadow-sm">
       <Button
-        className={"bg-white text-[0056BD] text-opacity-70"}
+        className={"bg-white text-[0056BD] text-opacity-70 px-4"}
         href="/about"
         ariaLabel={"Sign In"}
-        icon={<AiFillMail />}
+        icon={<FaUser />}
         variant={"secondary"}
       />
-      <Button href="/about" ariaLabel={"Contact me"}>
+      <Button className="px-6" href="/about" ariaLabel={"Contact me"}>
         Hire Me
       </Button>
     </div>

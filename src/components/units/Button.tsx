@@ -6,22 +6,22 @@ type Props = {
   className?: string;
   href?: string;
   icon?: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   size?: string;
   type?: string;
   ariaLabel?: string;
   variant?: string;
+  target?: string;
 };
 const variants = {
   primary:
     "uppercase text-white bg-[#408FED] hover:bg-blue-800 focus:ring-blue-300" +
     "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
   heroPrimary:
-    "uppercase text-blue bg-white hover:bg-blue-800 focus:ring-blue-300" +
+    "uppercase text-[#0D4380] bg-white hover:bg-blue-800 focus:ring-blue-300" +
     "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
   heroSecondary:
-    "uppercase text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300" +
-    "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
+    "uppercase text-white ring-0",
   secondary:
     "uppercase text-blue-600 hover:bg-blue-800 focus:ring-blue-300 text-[#0056BD]" +
     "dark:text-white bg-opacity-70 hover:dark:bg-opacity-20 dark:focus:ring-blue-800",
@@ -49,6 +49,7 @@ export const Button = ({
   size,
   type,
   ariaLabel,
+  target,
   variant = "primary",
 }: Props) => {
   return (
@@ -57,10 +58,11 @@ export const Button = ({
       href={href ? href : null}
       type={type}
       aria-label={ariaLabel}
+      target={target}
       className={cls(
         size ? sizes[size] : null,
-        `inline-flex select-none items-center rounded-sm px-6 py-3 text-sm font-medium ${variants[variant]} cursor-pointer focus:outline-none focus:ring-4`,
-        className
+        className,
+        `inline-flex select-none items-center rounded-md py-3 text-sm font-medium ${variants[variant]} cursor-pointer focus:outline-none`,
       )}
     >
       {children || (icon ? null : "Dolor Sit")}

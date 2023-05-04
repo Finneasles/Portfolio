@@ -1,6 +1,7 @@
 export { default as Author } from "./Author";
 export { default as BackgroundLayer } from "./BackgroundLayer";
 export { default as Button } from "./Button";
+export { default as Tag } from "./Tag";
 export { default as CTA } from "./CTA";
 export { default as CookieConsent } from "./CookieConsent";
 export { default as MdContent } from "./MdContent";

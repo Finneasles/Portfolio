@@ -34,51 +34,33 @@ export function Component() {
             This website uses essential cookies to enhance user experience. No
             identifying information is collected. Please read{" "}
             <a className="font-bold underline" href="#" target="_blank">
-              Cookies Policy.
+              Privacy Policy.
             </a>{" "}
             for more details.
           </p>
-          <Button
+        <div className="flex space-x-2">
+        <Button
+        variant="secondary"
+          className="px-6"
             onClick={() => {
               closePopup();
+            }}
+          >
+            Close
+          </Button>{" "}
+          
+          <Button
+          className="px-6"
+            onClick={() => {
+              acceptCookie();
             }}
           >
             Agree
           </Button>{" "}
         </div>
+        </div>
       </div>
     </div>
-    // <div
-    //   className={`fixed bottom-0 w-full rounded-sm bg-blue-700 p-4 text-sm text-white ${
-    //     consent ? "hidden" : ""
-    //   }`}
-    // >
-    //   <HiInformationCircle size={20} />
-    //   <p className="text-slate-200">
-    //     Cookies are used to collect information about your choices and
-    //     preferences, and collect information about your use of the sites to
-    //     improve functionality & enhance experience.
-    //   </p>
-    //   <div className="flex justify-between mt-4 align-middle">
-    //     <button
-    //       className="text-bold"
-    //       onClick={() => {
-    //         closePopup();
-    //       }}
-    //     >
-    //       Close
-    //     </button>
-
-    //     <button
-    //       className="shadow-md"
-    //       onClick={() => {
-    //         acceptCookie();
-    //       }}
-    //     >
-    //       Accept All
-    //     </button>
-    //   </div>
-    // </div>
   );
 }
 

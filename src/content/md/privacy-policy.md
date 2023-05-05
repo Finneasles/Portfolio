@@ -26,4 +26,3 @@ Please note that this privacy policy does not apply to any third-party services 
 This privacy policy may be updated from time to time without prior notice. Please check this page regularly for any updates.
 
 If you have any questions or concerns about this privacy policy, please contact me at contact@f1n.dev.
-

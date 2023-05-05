@@ -27,37 +27,36 @@ export function Component() {
     return null;
   }
   return (
-    <div className="fixed bottom-0 z-[99] flex w-full justify-end p-6">
+    <div className="fixed bottom-0 z-[99] flex w-full justify-start p-6">
       <div className="fade show rounded-md bg-white bg-opacity-95 text-xs dark:bg-black sm:w-full md:w-[650px]">
-        <div className="flex items-center justify-between p-4 rounded">
-          <p>
+        <div className="flex flex-col rounded p-4">
+          <p className="mb-4">
             This website uses essential cookies to enhance user experience. No
             identifying information is collected. Please read{" "}
-            <a className="font-bold underline" href="#" target="_blank">
+            <a className="font-bold underline" href="/privacy-policy" target="_blank">
               Privacy Policy.
             </a>{" "}
             for more details.
           </p>
-        <div className="flex space-x-2">
-        <Button
-        variant="secondary"
-          className="px-6"
-            onClick={() => {
-              closePopup();
-            }}
-          >
-            Close
-          </Button>{" "}
-          
-          <Button
-          className="px-6"
-            onClick={() => {
-              acceptCookie();
-            }}
-          >
-            Agree
-          </Button>{" "}
-        </div>
+          <div className="flex space-x-2">
+            <Button
+              variant="secondary"
+              className="px-6 text-start"
+              onClick={() => {
+                closePopup();
+              }}
+            >
+              Close
+            </Button>
+            <Button
+              className="px-6"
+              onClick={() => {
+                acceptCookie();
+              }}
+            >
+              Agree
+            </Button>
+          </div>
         </div>
       </div>
     </div>

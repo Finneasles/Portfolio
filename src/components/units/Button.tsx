@@ -62,7 +62,7 @@ export const Button = ({
       className={cls(
         size ? sizes[size] : null,
         className,
-        `inline-flex select-none items-center rounded py-3 text-sm ${variants[variant]} cursor-pointer focus:outline-none`,
+        `inline-flex font-Poppins select-none items-center rounded py-3 text-sm ${variants[variant]} cursor-pointer focus:outline-none`,
       )}
     >
       {children || (icon ? null : "Dolor Sit")}

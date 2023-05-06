@@ -1,9 +1,12 @@
 import { UrlObject } from "url";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Component = ({ data, router }) => {
   const [active, setActive] = useState("");
+  const { t } = useTranslation();
+
   const currentPathname = router?.pathname;
   useEffect(() => {
     console.log("sss", currentPathname);
@@ -11,21 +14,22 @@ export const Component = ({ data, router }) => {
   }, [currentPathname]);
 
   return (
-    <div className="flex grow md:justify-center lg:justify-end">
+    <div className="flex grow md:justify-center lg:justify-end mr-0 lg:mr-4">
       <nav className="items-center hidden px-2 space-x-6 uppercase drop-shadow-md md:flex ">
-        {data.map((e: { name: string; href: string | UrlObject }) => {
+        {data.map((e: { id: string, name: string; href: string | UrlObject }) => {
           return (
             <Link key={e.name} href={e.href}>
               <a
-                className={`dark:text-white text-black hover:text-opacity-100 ${
+                className={`dark:text-white text-black hover:opacity-100 ${
                   e.href === currentPathname
-                    ? "text-opacity-100"
+                    ? "opacity-100"
                     : undefined === currentPathname && e.href === "/"
-                    ? "text-opacity-100"
-                    : "text-opacity-70"
+                    ? "opacity-100"
+                    : "opacity-70"
                 }`}
               >
-                {e.name}
+                {t(`${e.id}_label`)}
+                
               </a>
             </Link>
           );

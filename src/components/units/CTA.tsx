@@ -1,14 +1,17 @@
 import React from "react";
 import { FaUser } from "react-icons/fa";
 import { Button } from "@/components";
+import { useTranslation } from "react-i18next";
 
 export const Component = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex justify-between space-x-1 drop-shadow-sm h-[42px]">
       <Button
         className={"bg-white px-4 text-[0056BD] text-opacity-70"}
         href="/about"
-        ariaLabel={"Sign In"}
+        ariaLabel={t("signIn_label")}
         icon={<FaUser />}
         variant={"secondary"}
       />
@@ -24,7 +27,7 @@ export const Component = () => {
         className="px-6"
         ariaLabel={"Contact me"}
       >
-        Hire Me
+       {t("hireMe_label")}
       </Button>
     </div>
   );

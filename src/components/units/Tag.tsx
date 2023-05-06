@@ -34,7 +34,7 @@ export const Tag = ({
       style={{background:" rgba(64, 143, 237, 0.16)"}}
       className={cls(
         className,
-        `inline-flex select-none items-center rounded-md px-4 py-2 text-sm font-medium cursor-pointer focus:outline-none`,
+        `inline-flex select-none items-center rounded-sm px-4 py-2 text-sm font-medium cursor-pointer focus:outline-none`,
       )}
     >
       {children || (icon ? null : "Dolor Sit")}

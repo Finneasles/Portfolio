@@ -23,9 +23,9 @@ export const Section = () => {
             required
           ></textarea>
         </div>
-        <Button type="submit">Post comment</Button>
+        <Button className={"px-6"} type="submit">Post comment</Button>
       </form>
-      <article className="mb-6 text-base bg-white rounded-lg dark:bg-gray-900">
+      <article className="mb-6 text-base rounded-lg">
         <footer className="flex items-center justify-between mb-2">
           <div className="flex items-center">
             <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">

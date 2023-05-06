@@ -4,7 +4,7 @@ export const Section = () => {
   return (
     <aside
       aria-label="Related articles"
-      className="px-6 py-8 bg-gray-50 dark:bg-gray-800 lg:px-32 lg:py-24"
+      className="px-6 py-8 bg-gray-50 dark:bg-gray-800 lg:px-32 lg:py-24 mx-w-4xl"
     >
       <div>
         <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">

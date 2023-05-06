@@ -8,7 +8,7 @@ import {
 } from "@/components";
 import { useState } from "react";
 
-export const Page = ({ source,router }) => {
+export const Page = ({ source, router }) => {
   const [author] = useState(source.frontMatter.author);
   const [title] = useState(source.frontMatter.title);
   const [description] = useState(source.frontMatter.description);
@@ -20,31 +20,31 @@ export const Page = ({ source,router }) => {
 
   return (
     <Layout title={title} router={router}>
-      <div>
-        <main className="px-6 pt-32 pb-16 bg-white dark:bg-gray-900 lg:px-32 lg:pt-60 lg:pb-32">
-          <article className="w-full format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-            <header className="mb-4 not-format lg:mb-6">
-              <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 dark:text-white lg:mb-6 lg:text-4xl">
-                {title}
-              </h1>
-              {description ? <p className="mb-12">{description}</p> : null}
-              {thumbnail ? (
-                <Thumbnail
-                src={thumbnail}
-                  alt={title + " Thumbnail"}
-                  caption={thumbnailCaption}
-                />
-              ) : null}
-            </header>
-            <MdContent source={content} />
-            <footer>
-              {author ? <Author data={author} /> : null}
-              {comments ? <CommentSection /> : null}
-            </footer>
-          </article>
+      <div className={`w-full pt-[128px] py-16 px-6 lg:px-32`}>
+        <main className="mx-auto mb-24 max-w-4xl space-y-24 px-0">
+            <article className="format format-sm sm:format-base lg:format-lg format-blue dark:format-invert w-full">
+              <header className="not-format mb-4 lg:mb-6">
+                <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 dark:text-white lg:mb-6 lg:text-4xl">
+                  {title}
+                </h1>
+                {description ? <p className="mb-12">{description}</p> : null}
+                {thumbnail ? (
+                  <Thumbnail
+                    src={thumbnail}
+                    alt={title + " Thumbnail"}
+                    caption={thumbnailCaption}
+                  />
+                ) : null}
+              </header>
+              <MdContent source={content} />
+              <footer>
+                {author ? <Author data={author} /> : null}
+                {comments ? <CommentSection /> : null}
+              </footer>
+            </article>
         </main>
-        {relatedArticles ? <RelatedArticlesSection /> : null}
       </div>
+      {relatedArticles ? <RelatedArticlesSection /> : null}
     </Layout>
   );
 };

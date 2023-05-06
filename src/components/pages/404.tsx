@@ -13,9 +13,7 @@ export const Page = ({ posts, router }) => {
       cookieConsent={false}
       router={router}
     >
-      <Hero>
-        <h1>404</h1>
-      </Hero>
+      <Hero />
     </Layout>
   );
 };

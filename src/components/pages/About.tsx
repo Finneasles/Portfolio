@@ -9,11 +9,7 @@ export const Page = ({ pageTitle, router }) => {
   const [title] = useState(pageTitle);
   return (
     <Layout title={title} router={router}>
-      <Hero size="sm">
-        <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight text-white dark:text-white md:text-5xl xl:text-6xl">
-          Curabitur in ligula ante. Integer.
-        </h1>
-      </Hero>
+      <Hero />
       <div className="px-6 py-16 lg:px-32">
         <section className="bg-white dark:bg-gray-900">
           <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">

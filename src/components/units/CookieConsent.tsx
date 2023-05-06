@@ -10,7 +10,7 @@ export function Component() {
     setConsent(hasCookie("localConsent"));
   }, []);
 
-  const { showText, textPosition } = useEntryEffect({
+  const { position: intPos } = useEntryEffect({
     delay: 500,
     initialPosition: 6000,
     finalPosition: 0,
@@ -36,7 +36,7 @@ export function Component() {
   return (
     <div
       style={{
-        transform: `translateX(${textPosition}%)`,
+        transform: `translateX(${intPos}%)`,
       }}
       className="cookie-consent"
     >

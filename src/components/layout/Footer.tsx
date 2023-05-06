@@ -6,31 +6,42 @@ export const Footer = () => {
   return (
     <footer
       aria-label="Site Footer"
-      className="bg-gray-100 border-t border-white/10 dark:bg-gray-900"
-      style={{
-        background:
-          "linear-gradient(90deg, rgba(173, 211, 255, 0.08) 0%, rgba(83, 157, 245, 0.08) 100.02%)",
-      }}
+      className="footer-section"
     >
-      <div className="p-6 lg:px-32">
+      <div className="top-foot">
         <div className="lg:flex lg:gap-8">
           <div>
-            <span className="block w-32 h-10 bg-gray-400 rounded-sm dark:bg-gray-700"></span>
+            <div className="flex items-center text-center">
+              <div className="lg:flex lg:gap-8">
+                <div className="flex space-x-2 ">
+                  <span className="flex items-center justify-center rounded-sm text-3xl font-black uppercase text-white text-opacity-70">
+                    f1n
+                  </span>
+                  <span
+                    className={`flex items-center justify-center rounded bg-white bg-opacity-70 px-1 text-2xl font-black uppercase`}
+                  >
+                    .dev
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 mt-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+          <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
             <div className="col-span-2">
               <div>
-                <h2 className="text-2xl font-bold">Get the latest news!</h2>
+                <h2 className="font-Poppins text-2xl font-bold uppercase">
+                  Get the latest news!
+                </h2>
 
-                <p className="mt-6">
+                <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
                   non cupiditate quae nam molestias.
                 </p>
               </div>
             </div>
 
-            <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+            <div className="col-span-2 lg:col-span-3 lg:flex lg:items-start">
               <form className="w-full">
                 <label
                   htmlFor="email"
@@ -41,16 +52,16 @@ export const Footer = () => {
                   Email{" "}
                 </label>
 
-                <div className="p-2 border border-gray-200 rounded-sm dark:border-white/10 sm:flex sm:items-center">
+                <div className="rounded-sm border border-gray-200 px-2 py-2 dark:border-white/10 sm:flex sm:items-center">
                   <input
-                    className="w-full h-12 p-3 text-sm font-medium tracking-widest placeholder-gray-400 uppercase bg-transparent border-none"
+                    className="h-12 w-full border-none bg-transparent p-2 text-sm font-medium uppercase tracking-widest placeholder-gray-400"
                     type="email"
                     id="email"
                     placeholder="Enter your email"
                   />
                   <Button
                     href="#"
-                    className="w-full h-12 px-4 tracking-wide sm:ml-4 sm:mt-0 sm:w-auto sm:flex-shrink-0"
+                    className="h-12 w-full px-4 tracking-wide sm:ml-4 sm:mt-0 sm:w-auto sm:flex-shrink-0"
                     type="submit"
                   >
                     Sign Up
@@ -59,7 +70,7 @@ export const Footer = () => {
               </form>
             </div>
 
-            <div className="flex col-span-2 gap-4 lg:col-span-5">
+            <div className="col-span-2 flex gap-4 lg:col-span-5">
               <a
                 className="hover:opacity-75"
                 href="#"
@@ -69,7 +80,7 @@ export const Footer = () => {
                 <span className="sr-only"> Facebook </span>
 
                 <svg
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -91,7 +102,7 @@ export const Footer = () => {
                 <span className="sr-only"> Instagram </span>
 
                 <svg
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -113,7 +124,7 @@ export const Footer = () => {
                 <span className="sr-only"> Twitter </span>
 
                 <svg
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -127,14 +138,10 @@ export const Footer = () => {
       </div>
 
       <div
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(0, 53, 108, 0.16) 0.18%, rgba(173, 211, 255, 0) 100.18%)",
-        }}
-        className="px-6 py-12 mt-12 border-t border-gray-200 dark:border-white/10 lg:px-32"
+        className="bot-foot"
       >
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          <p className="text-xs text-left">
+        <div className="mx-auto flex max-w-4xl items-center justify-between">
+          <p className="flex-grow text-left text-xs">
             Copyright &copy; {new Date().getFullYear()}.{" "}
             {process.env.NEXT_PUBLIC_STATIC_TITLE
               ? process.env.NEXT_PUBLIC_STATIC_TITLE + "."
@@ -142,7 +149,7 @@ export const Footer = () => {
             All rights reserved.
           </p>
 
-          <nav className="flex justify-start text-xs lg:justify-end">
+          <nav className="flex justify-end text-xs">
             <ThemeSwitch />
           </nav>
         </div>

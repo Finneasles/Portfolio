@@ -27,9 +27,9 @@ export const Navbar = ({ scrollY, router, menuData, variant = "primary" }: Props
   return (
     <nav
       aria-label="Site Navigation"
-      className={`transition-all ${variants[variant]} z-[98]  w-full border-b px-6 lg:px-32`}
+      className={`${variants[variant]} z-[98] w-full border-b px-6 lg:px-32`}
     >
-      <div className="flex items-center justify-between w-full h-full mx-auto text-sm">
+      <div className="flex max-w-4xl items-center justify-between w-full h-full mx-auto text-sm">
         <Link href="/">
           <div className="flex items-center text-center">
             <div className="lg:flex lg:gap-8">

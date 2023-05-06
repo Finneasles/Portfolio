@@ -19,18 +19,21 @@ type Props = {
 
 const navData = [
   {
+    id: "home",
     name: "Home",
     href: "/",
   },
   {
+    id: "about",
     name: "About",
     href: "/about",
   },
-  {
+  {  id: "projects",
     name: "Projects",
     href: "/projects",
   },
-  {
+  {   
+    id: "pubs",
     name: "Publications",
     href: "/publications",
   },
@@ -62,19 +65,13 @@ export const Layout = ({
           property="og:description"
           content={process.env.NEXT_PUBLIC_DESC}
         />
-        <meta
-          property="og:image"
-          content="./images/thumb-unset.jpg"
-        />
+        <meta property="og:image" content="./images/thumb-unset.jpg" />
       </Head>
       {navbar ? (
         <>
-          <div className="fixed top-0 z-[99] h-1 w-full">
-            <div className="h-1 w-full bg-transparent ">
+          <div className="scroll-prog">
+            <div>
               <div
-                className={
-                  "h-1 bg-[#408FED] transition-all duration-100 ease-out"
-                }
                 style={{ width: `${progress}%` }}
               ></div>
             </div>
@@ -89,9 +86,10 @@ export const Layout = ({
           </header>
         </>
       ) : null}
-      <div>{children}</div>
-
-      {footer ? <Footer /> : null}
+      <div className="sub-body">
+        <div className="content">{children}</div>
+        {footer ? <Footer /> : null}
+      </div>
       {cookieConsent ? <CookieConsent /> : null}
     </div>
   );

@@ -1,0 +1,4 @@
+.hero-section {
+    background: linear-gradient(90deg, #539DF5 0%, #65ABFF 100%);
+    @apply relative mx-auto flex min-h-[150px] content-center items-center justify-center overflow-hidden px-6 pb-8 pt-[120px] lg:px-32;
+}

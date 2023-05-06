@@ -1,0 +1,12 @@
+.scroll-prog {
+    @apply fixed top-0 z-[99] h-1 w-full;
+}
+
+.scroll-prog :first-child {
+    @apply h-1 w-full bg-transparent;
+}
+
+.scroll-prog :first-child :first-child {
+    @apply h-1 bg-[#408FED] transition-all duration-100 ease-out;
+}
+

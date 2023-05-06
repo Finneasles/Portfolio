@@ -1,0 +1,13 @@
+.footer-section {
+    background: linear-gradient(90deg, rgba(173, 211, 255, 0.08) 0%, rgba(83, 157, 245, 0.08) 100%);
+    @apply border-t border-white/10 bg-gray-100 dark:bg-gray-900;
+}
+
+.footer-section .top-foot{
+    @apply px-6 lg:px-0 m-auto max-w-4xl items-center justify-center py-6;
+}
+
+.footer-section .bot-foot {
+    background: linear-gradient(180deg, rgba(0, 53, 108, 0.16) 0.18%, rgba(173, 211, 255, 0) 100%);
+    @apply mt-12 px-6 lg:px-0 w-full border-t border-gray-200 py-12 dark:border-white/10;
+}

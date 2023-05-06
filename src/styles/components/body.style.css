@@ -1,0 +1,7 @@
+.body-container {
+    @apply w-full py-16 px-6 lg:px-32;
+}
+
+body {
+    @apply bg-white bg-gradient-to-b text-black  dark:from-[#00162D] dark:to-[#000] dark:text-white;
+}

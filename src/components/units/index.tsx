@@ -14,4 +14,5 @@ export { default as HeroDecorComponent } from "./HeroDecor";
 export { default as HeroTypographyComponent } from "./HeroTypography";
 export { default as HeroCTAComponent } from "./HeroCTA";
 export { default as FlashingCursor } from "./FlashingCursor";
+export {default as LogoComponent} from "./Logo";
 

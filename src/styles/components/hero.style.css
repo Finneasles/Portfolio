@@ -2,3 +2,7 @@
     background: linear-gradient(90deg, #539DF5 0%, #65ABFF 100%);
     @apply relative mx-auto flex min-h-[150px] content-center items-center justify-center overflow-hidden px-6 pb-8 pt-[120px] lg:px-32;
 }
+
+.hero-title {
+    @apply mb-8 font-Poppins text-4xl font-bold uppercase leading-none tracking-tight text-white drop-shadow-md md:text-6xl;
+}

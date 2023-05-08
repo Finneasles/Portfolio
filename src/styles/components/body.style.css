@@ -1,7 +1,11 @@
 .body-container {
-    @apply w-full py-16 px-6 lg:px-32;
+    @apply w-full py-16 px-6 lg:px-32 bg-white bg-gradient-to-b dark:from-[#00162D] dark:to-[#000];
 }
 
 body {
-    @apply bg-white bg-gradient-to-b text-black  dark:from-[#00162D] dark:to-[#000] dark:text-white;
+    @apply dark:bg-[#00162D] bg-[#539DF5] bg-gradient-to-b text-[#0D4380] dark:from-[#00162D] dark:to-[#000] dark:text-white;
+}
+
+.main-section {
+    @apply mx-auto max-w-4xl space-y-24 px-0 mb-24
 }

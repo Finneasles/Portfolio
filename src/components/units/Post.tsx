@@ -2,8 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button, Tag } from "@/components";
+import { useReadTime } from "@/hooks";
 
 export const Component = ({ data }) => {
+  const readTime1 = useReadTime({ text: data.markdownBody });
   return (
     <article
       style={{
@@ -28,8 +30,8 @@ export const Component = ({ data }) => {
         </div>
         <span className="text-sm">14 days ago</span>
       </div>
-      <div className="flex-1 space-y-1 mb-8">
-        <h2 className="text-2xl font-Poppins uppercase font-bold tracking-tight text-gray-900 dark:text-white">
+      <div className="mb-8 flex-1 space-y-1">
+        <h2 className="font-Poppins text-2xl font-bold uppercase tracking-tight">
           <Link href={"publications/" + data.slug}>
             <a>{data.frontMatter.title}</a>
           </Link>

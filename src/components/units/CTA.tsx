@@ -7,7 +7,7 @@ export const Component = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex justify-between space-x-1 drop-shadow-sm h-[42px]">
+    <div className="flex justify-between space-x-1 drop-shadow h-[42px]">
       <Button
         className={"bg-white px-4 text-[0056BD] text-opacity-70"}
         href="/about"

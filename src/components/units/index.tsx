@@ -10,3 +10,8 @@ export { default as Nav } from "./Nav";
 export { default as Post } from "./Post";
 export { default as Thumbnail } from "./Thumbnail";
 export { default as ThemeSwitch } from "./ThemeSwitch";
+export { default as HeroDecorComponent } from "./HeroDecor";
+export { default as HeroTypographyComponent } from "./HeroTypography";
+export { default as HeroCTAComponent } from "./HeroCTA";
+export { default as FlashingCursor } from "./FlashingCursor";
+

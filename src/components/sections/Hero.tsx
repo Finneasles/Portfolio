@@ -5,10 +5,6 @@ import {
   HeroDecorComponent,
   HeroTypographyComponent,
 } from "@/components";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { ImNpm } from "react-icons/im";
-import { useTranslation } from "react-i18next";
-import { useEntryEffect, useTypingEffect } from "@/hooks";
 
 export const sizes = [{ lg: 64, md: 48, sm: 32 }];
 

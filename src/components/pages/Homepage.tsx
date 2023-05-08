@@ -4,18 +4,17 @@ import {
   PublicationsSection as Publications,
   ProjectsSection as Projects,
 } from "@/components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const pageTitle = "Home";
 
 const Page = ({ posts, router }) => {
   const [title] = useState(pageTitle);
-
   return (
-    <Layout title={title} router={router}>
+    <Layout title={title} router={router} transparentNav={true}>
       <Hero />
       <div className="body-container">
-        <div className="mx-auto max-w-4xl space-y-24 px-0 mb-24">
+        <div className="main-section">
           <Projects allPosts={posts} />
           <Publications allPosts={posts} />
         </div>
@@ -23,6 +22,5 @@ const Page = ({ posts, router }) => {
     </Layout>
   );
 };
-
 
 export default Page;

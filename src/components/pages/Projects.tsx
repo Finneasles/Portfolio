@@ -5,13 +5,15 @@ import {
 } from "@/components";
 import { useState } from "react";
 
-export const Page = ({ posts, pageTitle,router }) => {
+export const Page = ({ posts, pageTitle, router }) => {
   const [title] = useState(pageTitle);
   return (
-    <Layout title={title} router={router}>
+    <Layout title={title} router={router} transparentNav={true}>
       <Hero />
-      <div className="px-6 py-16 lg:px-32">
-        <Projects allPosts={posts} />
+      <div className="body-container">
+        <div className="main-section">
+          <Projects allPosts={posts} />
+        </div>
       </div>
     </Layout>
   );

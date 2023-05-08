@@ -17,31 +17,34 @@ export const Page = ({ source, router }) => {
   const [content] = useState(source.markdownBody);
   const [comments] = useState(source.frontMatter.comments);
   const [relatedArticles] = useState(source.frontMatter.relatedArticles);
-
+  const articleStyle =
+    "format format-sm sm:format-base lg:format-lg format-blue dark:format-invert w-full py-32";
   return (
     <Layout title={title} router={router}>
-      <div className={`w-full pt-[128px] py-16 px-6 lg:px-32`}>
-        <main className="mx-auto mb-24 max-w-4xl space-y-24 px-0">
-            <article className="format format-sm sm:format-base lg:format-lg format-blue dark:format-invert w-full">
-              <header className="not-format mb-4 lg:mb-6">
-                <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 dark:text-white lg:mb-6 lg:text-4xl">
-                  {title}
-                </h1>
-                {description ? <p className="mb-12">{description}</p> : null}
-                {thumbnail ? (
-                  <Thumbnail
-                    src={thumbnail}
-                    alt={title + " Thumbnail"}
-                    caption={thumbnailCaption}
-                  />
-                ) : null}
-              </header>
-              <MdContent source={content} />
+      <div className="body-container">
+        <main className="main-section">
+          <article className={articleStyle}>
+            <header className="not-format mb-2 lg:mb-6">
+              <h1 className="section-title-l">{title}</h1>
+              {description ? <p>{description}</p> : null}
+              {thumbnail ? (
+                <Thumbnail
+                  src={thumbnail}
+                  alt={title + " Thumbnail"}
+                  caption={thumbnailCaption}
+                />
+              ) : null}
+            </header>
+            <div className="space-y-24">
+              <div>
+                <MdContent source={content} />
+              </div>{" "}
               <footer>
                 {author ? <Author data={author} /> : null}
                 {comments ? <CommentSection /> : null}
               </footer>
-            </article>
+            </div>
+          </article>
         </main>
       </div>
       {relatedArticles ? <RelatedArticlesSection /> : null}

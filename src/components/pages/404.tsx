@@ -2,7 +2,7 @@ import { HeroSection as Hero, Layout } from "@/components";
 import { useState } from "react";
 
 const pageTitle = "Page not found";
-export const Page = ({ posts, router }) => {
+export const Page = ({ router }) => {
   const [title] = useState(pageTitle);
 
   return (
@@ -12,6 +12,7 @@ export const Page = ({ posts, router }) => {
       footer={false}
       cookieConsent={false}
       router={router}
+      transparentNav={true}
     >
       <Hero />
     </Layout>

@@ -13,8 +13,10 @@ type Props = {
   title?: string;
   footer?: boolean;
   navbar?: boolean;
+  pageDesc?: string;
   cookieConsent?: boolean;
   router: NextRouter;
+  transparentNav?: boolean;
 };
 
 const navData = [
@@ -43,12 +45,13 @@ export const Layout = ({
   children,
   title = defaultTitle(),
   router,
+  pageDesc = null,
   cookieConsent = true,
   footer = true,
   navbar = true,
+  transparentNav = false
 }: Props) => {
   const { scrollY, progress } = useScrollProgress();
-
   return (
     <div>
       <Head>
@@ -59,13 +62,13 @@ export const Layout = ({
           content="initial-scale=1.0,
         width=device-width"
         />
-        <meta name="description" content={process.env.NEXT_PUBLIC_DESC} />
-        <meta property="og:title" content={title} />
+        <meta name="description" content={pageDesc} />
+        <meta property="og:title" content={title + TitleEnd()} />
         <meta
           property="og:description"
-          content={process.env.NEXT_PUBLIC_DESC}
+          content={pageDesc}
         />
-        <meta property="og:image" content="./images/thumb-unset.jpg" />
+        <meta property="og:image" content="/images/thumb-unset.jpg" />
       </Head>
       {navbar ? (
         <>
@@ -80,7 +83,8 @@ export const Layout = ({
             <Navbar
               menuData={navData}
               scrollY={scrollY}
-              variant={scrollY > 100 ? "fixed" : "primary"}
+              transparentNav={transparentNav}
+              variant={scrollY > 100 || !transparentNav ? "fixed" : "primary"}
               router={router}
             />
           </header>

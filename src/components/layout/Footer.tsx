@@ -34,7 +34,7 @@ export const Footer = () => {
                   Get the latest news!
                 </h2>
 
-                <p>
+                <p className="text-gray-500 dark:text-gray-400">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
                   non cupiditate quae nam molestias.
                 </p>

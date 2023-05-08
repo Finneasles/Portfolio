@@ -4,9 +4,9 @@ import { ImNpm } from "react-icons/im";
 
 const Component = () => {
   const socials = [
-    { id: "linkedin", href: "https://www.linkedin.com/in/fin-a-aa4475267/" },
-    { id: "github", href: "https://github.com/finneasles/" },
-    { id: "npmjs", href: "https://www.npmjs.com/~finneas28" },
+    { id: "linkedin", href: process.env.NEXT_PUBLIC_LINKEDIN_URL },
+    { id: "github", href: process.env.NEXT_PUBLIC_GITHUB_URL },
+    { id: "npmjs", href: process.env.NEXT_PUBLIC_NPMJS_URL },
   ];
   return (
     <div className="flex flex-col drop-shadow-md">
@@ -55,7 +55,6 @@ const Component = () => {
       </div>
     </div>
   );
-
 };
 
 export default Component;

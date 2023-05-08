@@ -20,7 +20,12 @@ export const Page = ({ source, router }) => {
   const articleStyle =
     "format format-sm sm:format-base lg:format-lg format-blue dark:format-invert w-full py-32";
   return (
-    <Layout title={title} router={router}>
+    <Layout
+      title={title}
+      router={router}
+      pageDesc={description}
+      thumbSrc={thumbnail}
+    >
       <div className="body-container">
         <main className="main-section">
           <article className={articleStyle}>

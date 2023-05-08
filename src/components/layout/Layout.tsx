@@ -61,12 +61,19 @@ export const Layout = ({
         <meta charSet="utf-8" />
         <meta
           name="viewport"
-          content="initial-scale=1.0,
-        width=device-width"
+          content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
         />
-        <meta name="description" content={pageDesc} />
+        <link rel="icon" type="image/png" href={`${process.env.NEXT_PUBLIC_SITE_URL}/images/favicon.png`}/>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <meta name="theme-color" content="#408FED"/>
+        <meta name="description" content={pageDesc || t("hero_desc0")} />
         <meta property="og:title" content={title + TitleEnd()} />
-        <meta property="og:description" content={pageDesc || t("hero_desc0") } />
+        <meta property="og:description" content={pageDesc || t("hero_desc0")} />
         <meta
           property="og:image"
           content={
@@ -74,6 +81,14 @@ export const Layout = ({
             `${process.env.NEXT_PUBLIC_SITE_URL}/images/thumb-unset.jpg`
           }
         />
+        <link rel="apple-touch-icon" href="/images/icons/152x.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/icons/touch-icon-ipad.png"
+        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/180x.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/images/icons/167x.png" />
       </Head>
       {navbar ? (
         <>

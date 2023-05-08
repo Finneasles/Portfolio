@@ -37,9 +37,7 @@ export const Navbar = ({
       className={`${variants[variant]} z-[98] h-[96px] w-full border-b px-6 lg:px-32`}
     >
       <div className="mx-auto flex h-full w-full max-w-4xl items-center justify-between text-sm">
-        <Link href="/">
           <LogoComponent transparentNav={transparentNav} />
-        </Link>
         <div className="flex w-full items-center justify-end space-x-2">
           <Menu
             transparentNav={transparentNav}

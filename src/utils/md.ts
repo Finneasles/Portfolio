@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const root = process.cwd() + "/src/content/md";
+const root = process.cwd() + "/src/_md";
 
 export async function getFiles(dataType?: string) {
   return fs.readdirSync(

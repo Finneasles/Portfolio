@@ -8,7 +8,7 @@ export default function Home({ postsData }) {
 }
 
 export async function getStaticProps() {
-  const postsData = await getAllPostsWithFrontMatter("posts");
+  const postsData = await getAllPostsWithFrontMatter("_posts");
   return {
     props: {
       postsData,

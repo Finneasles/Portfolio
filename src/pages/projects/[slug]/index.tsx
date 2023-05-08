@@ -13,7 +13,7 @@ export default Content;
 export async function getStaticProps({ params }: Params) {
   const { frontMatter, markdownBody } = await getPostBySlug(
     params.slug,
-    "posts"
+    "_posts"
   );
 
   return {
@@ -25,7 +25,7 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles("posts");
+  const posts = await getFiles("_posts");
   const paths = posts.map((filename: string) => ({
     params: {
       slug: filename.replace(/\.md/, ""),

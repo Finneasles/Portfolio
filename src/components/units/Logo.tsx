@@ -24,7 +24,7 @@ const Component = ({ transparentNav }) => {
                 scrollY > 100 || !transparentNav
                   ? "bg-[#408FED] text-white dark:bg-white dark:text-[#408FED]"
                   : " bg-[#fff] text-[#408FED] dark:bg-white"
-              } bg-opacity-92 text-opacity-92 items-center justify-center rounded px-1 text-2xl font-black uppercase`}
+              } bg-opacity-92 text-opacity-92 items-center justify-center rounded px-1.5 text-2xl font-black uppercase`}
             >
               .dev
             </span>

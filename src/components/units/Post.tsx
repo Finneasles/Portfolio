@@ -25,7 +25,11 @@ export const Component = ({ data }) => {
       <div className="flex items-center justify-between py-2">
         <div className="flex space-x-2">
           {data.frontMatter.categories.map((tag: string) => {
-            return <Tag key={tag}>{tag}</Tag>;
+            return (
+              <Tag key={tag} href={`/category/${tag.toLowerCase()}`}>
+                {tag}
+              </Tag>
+            );
           })}
         </div>
         <span className="text-sm">14 days ago</span>

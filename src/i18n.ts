@@ -12,6 +12,7 @@ const resources = {
       hireMe_label: "Hire me",
       contactMe_label: "Contact me",
       hero_span0: "Hello! I'm a",
+      letsChat_label: "Let's chat",
       hero_subtitle0: "Developer",
       hero_desc0:
         "Experienced in web development, skilled in React, Node.js, TypeScript, and related technologies for building high-quality applications.",

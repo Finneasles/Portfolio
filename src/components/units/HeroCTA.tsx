@@ -12,7 +12,7 @@ const Component = () => {
     <div className="flex flex-col drop-shadow-md">
       <div>
         <Button
-          className="px-6"
+          className="px-12"
           href="/about"
           size="sm"
           onClick={(e) => {
@@ -28,8 +28,8 @@ const Component = () => {
           👋 Let&apos;s Chat
         </Button>
       </div>
-      <div className="content-center py-2">
-        <span className="my-2 h-[32px] text-xs font-bold uppercase text-white md:mx-2 md:my-0">
+      <div className="content-center">
+        <span className="text-xs font-bold uppercase text-white md:mx-2">
           or
         </span>
       </div>{" "}

@@ -4,7 +4,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["flowbite.s3.amazonaws.com","repository-images.githubusercontent.com"],
+    domains: [
+      "flowbite.s3.amazonaws.com",
+      "repository-images.githubusercontent.com",
+    ],
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
@@ -16,4 +19,8 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+const withPWA = require("next-pwa")({
+  dest: "public",
+});
+
+module.exports = withPWA(nextConfig);

@@ -1,7 +1,0 @@
-.section-title {
-    @apply mb-8 font-Poppins text-center text-2xl font-bold uppercase dark:text-white md:text-4xl;
-}
-
-.section-title-l {
-    @apply mb-8 font-Poppins text-left text-2xl font-bold uppercase text-gray-900 dark:text-white md:text-4xl;
-}

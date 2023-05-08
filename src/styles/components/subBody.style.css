@@ -1,7 +1,0 @@
-.sub-body {
-    @apply flex min-h-screen flex-col;
-}
-
-.sub-body .content {
-    @apply flex-grow;
-}

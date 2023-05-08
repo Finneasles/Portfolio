@@ -55,17 +55,22 @@ export function Component() {
       <div className="flex space-x-2">
         <Button
           variant="secondary"
+          href="#"
           className="px-6 text-start"
-          onClick={() => {
+          onClick={(e) => {
             closePopup();
+            e.preventDefault();
           }}
+          
         >
           Close
         </Button>
         <Button
           className="px-6"
-          onClick={() => {
+          href="#"
+          onClick={(e) => {
             acceptCookie();
+            e.preventDefault();
           }}
         >
           Agree

@@ -1,5 +1,5 @@
-import { ContentPage } from "@/components";
 import { getFiles, getPostBySlug } from "@/utils";
+import { ContentPage } from "@/components";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { useRouter } from "next/router";
 

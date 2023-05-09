@@ -1,16 +1,13 @@
-import { ContentPage } from "@/components";
-import { getFiles, getPostBySlug } from "@/utils";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
+import { getFiles, getPostBySlug } from "@/utils";
+import { ContentPage } from "@/components";
 import { useRouter } from "next/router";
-
 
 function Content({ frontMatter, markdownBody }) {
   const router = useRouter();
-  return (
-    <ContentPage source={{ frontMatter, markdownBody }} router={router}/>
-  );
-}
 
+  return <ContentPage source={{ frontMatter, markdownBody }} router={router} />;
+}
 
 export default Content;
 
@@ -20,7 +17,7 @@ export async function getStaticProps({ params }: Params) {
   return {
     props: {
       frontMatter,
-      markdownBody
+      markdownBody,
     },
   };
 }

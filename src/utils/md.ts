@@ -1,14 +1,12 @@
-import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
+import path from "path";
+import fs from "fs";
 
 const root = process.cwd() + "/src/_md";
 
 export async function getFiles(dataType?: string) {
   return fs.readdirSync(
-    dataType
-      ? path.join(root, dataType)
-      : path.join(root),
+    dataType ? path.join(root, dataType) : path.join(root),
     "utf-8"
   );
 }
@@ -30,28 +28,40 @@ export async function getPostBySlug(slug: string, dataType?: string) {
 }
 
 export async function getAllPostsWithFrontMatter(dataType?: string) {
-  const files = fs.readdirSync(
-    dataType ? path.join(root, dataType) : path.join(root)
-  );
+  const files = await getMdFiles(dataType ? path.join(root, dataType) : root);
 
   // @ts-ignore
-  return files.reduce((allPosts, postSlug) => {
-    const source = fs.readFileSync(
-      dataType
-        ? path.join(root, dataType, postSlug)
-        : path.join(root, postSlug),
-      "utf8"
-    );
+  return files.map((file) => {
+    const source = fs.readFileSync(file.path, "utf8");
     const { data } = matter(source);
 
-    return [
-      {
-        frontMatter: data,
-        slug: postSlug.replace(".md", ""),
-      },
-      ...allPosts,
-    ];
-  }, []);
+    return {
+      frontMatter: data,
+      slug: file.slug,
+    };
+  });
+}
+
+// Helper function to get all .md files in a directory and its subdirectories
+async function getMdFiles(
+  directory: string
+): Promise<{ path: string; slug: string }[]> {
+  const entries = await fs.promises.readdir(directory, { withFileTypes: true });
+  const files = await Promise.all(
+    entries.map(async (entry) => {
+      const entryPath = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        return getMdFiles(entryPath);
+      } else if (entry.isFile() && entry.name.endsWith(".md")) {
+        return {
+          path: entryPath,
+          slug: entry.name.replace(".md", ""),
+        };
+      }
+      return null;
+    })
+  );
+  return files.filter((file) => file !== null).flat();
 }
 
 async function collateCategories(dataType: string) {
@@ -59,10 +69,7 @@ async function collateCategories(dataType: string) {
   let allCategories = new Set<string>(); // to ensure only unique tags are added
 
   files.map((postSlug) => {
-    const source = fs.readFileSync(
-      path.join(root, dataType, postSlug),
-      "utf8"
-    );
+    const source = fs.readFileSync(path.join(root, dataType, postSlug), "utf8");
     const { data } = matter(source);
     data.categories.forEach((category: string) => {
       allCategories.add(category);

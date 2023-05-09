@@ -25,7 +25,9 @@ const useTypingEffect = ({
       timer = setTimeout(() => {
         setDisplayText(currentText.substring(0, displayText.length + 1));
         if (displayText.length === currentText.length) {
-          timer = setTimeout(() => {setIsDeleting(true);}, pauseDelay);
+          timer = setTimeout(() => {
+            setIsDeleting(true);
+          }, pauseDelay);
         }
       }, typingDelay);
     } else {
@@ -35,7 +37,7 @@ const useTypingEffect = ({
         if (displayText.length === 0) {
           // switch to typing mode
           setIsDeleting(false);
-            setCurrentIndex((currentIndex + 1) % text.length)
+          setCurrentIndex((currentIndex + 1) % text.length);
         }
       }, deletingDelay);
     }

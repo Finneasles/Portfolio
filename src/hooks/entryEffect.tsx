@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 interface UseEntryEffectProps {
   delay: number;
@@ -17,7 +17,7 @@ function useEntryEffect({
     setTimeout(() => {
       setVisible(true);
     }, delay);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const position = visible ? finalPosition : initialPosition;
@@ -25,4 +25,4 @@ function useEntryEffect({
   return { visible, position };
 }
 
-export default useEntryEffect
+export default useEntryEffect;

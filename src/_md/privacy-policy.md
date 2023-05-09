@@ -2,7 +2,9 @@
 title: "Privacy Policy"
 description: "Learn how cookies are used & how information is handled. Read the Privacy Policy for more details."
 categories: []
+page: true
 date: "Mar 25, 2022"
+author: {name : "Aliquam" , description: "Graphic Designer, educator & CEO" , image: "/images/authors/aliquam.jpg"}
 ---
 
 ## Personal Data

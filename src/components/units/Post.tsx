@@ -1,11 +1,16 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import { Button, Tag } from "@/components";
 import { useReadTime } from "@/hooks";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
+const isSnippet = (data) => {
+  return !data.frontMatter.project && !data.frontMatter.page ? true : false;
+};
 export const Component = ({ data }) => {
   const readTime1 = useReadTime({ text: data.markdownBody });
+  const { t } = useTranslation();
   return (
     <article
       style={{
@@ -36,7 +41,7 @@ export const Component = ({ data }) => {
       </div>
       <div className="mb-8 flex-1 space-y-1">
         <h2 className="font-Poppins text-2xl font-bold uppercase tracking-tight">
-          <Link href={"publications/" + data.slug}>
+          <Link href={`${isSnippet(data) ? "/snippets/" : "/"}${data.slug}`}>
             <a>{data.frontMatter.title}</a>
           </Link>
         </h2>
@@ -51,8 +56,8 @@ export const Component = ({ data }) => {
               View
             </Button>
           ) : (
-            <Button href={"publications/" + data.slug} className="px-6">
-              Read Article
+            <Button href={"snippets/" + data.slug} className="px-6">
+              {t("viewSnip_label")}
             </Button>
           )}
 

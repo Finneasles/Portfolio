@@ -1,6 +1,6 @@
 import { useScrollProgress } from "@/hooks";
+import { forwardRef, useRef } from "react";
 import Link from "next/link";
-import { forwardRef, useRef } from 'react'
 
 const Component = ({ transparentNav }) => {
   const { scrollY } = useScrollProgress();

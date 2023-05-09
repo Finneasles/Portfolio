@@ -1,13 +1,32 @@
-import { Button } from "@/components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { ImNpm } from "react-icons/im";
+import { Button } from "@/components";
 
-const Component = () => {
+const Component = ({ src }: { src?: string }) => {
   const socials = [
     { id: "linkedin", href: process.env.NEXT_PUBLIC_LINKEDIN_URL },
     { id: "github", href: process.env.NEXT_PUBLIC_GITHUB_URL },
     { id: "npmjs", href: process.env.NEXT_PUBLIC_NPMJS_URL },
   ];
+
+  const letsChat = (e: { preventDefault: () => void }) => {
+    const subject = encodeURIComponent("Let's Have a Chat");
+    const body = encodeURIComponent(
+      `Hi Fin,\n\nI came across your website and I'd love to discuss ideas with you and have a chat.\n\nBest regards,\n[Your Name]`
+    );
+    window.location.href = `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    e.preventDefault();
+  };
+
+  const learnMore = (e: { preventDefault: () => void }) => {
+    const subject = encodeURIComponent("Let's Have a Chat");
+    const body = encodeURIComponent(
+      `Hi Fin,\n\nI came across your website and I would like to learn more about you and you work.\n\nBest regards,\n[Your Name]`
+    );
+    window.location.href = `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    e.preventDefault();
+  };
+
   return (
     <div className="flex flex-col drop-shadow-md">
       <div>
@@ -15,17 +34,10 @@ const Component = () => {
           className="px-12"
           href="/about"
           size="sm"
-          onClick={(e) => {
-            const subject = encodeURIComponent("Let's Have a Chat");
-            const body = encodeURIComponent(
-              `Hi there,%0D%0A%0D%0AI came across your website and I'd love to discuss ideas with you and have a chat.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]`
-            );
-            window.location.href = `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-            e.preventDefault();
-          }}
+          onClick={src == "about" ? learnMore : letsChat}
           variant="heroPrimary"
         >
-          👋 Let&apos;s Chat
+          {src == "about" ? "📫 Learn More" : "👋 Let's Chat"}
         </Button>
       </div>
       <div className="content-center">

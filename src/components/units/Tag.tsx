@@ -1,5 +1,5 @@
-import React from "react";
 import { classesJoin as cls } from "@/utils";
+import React from "react";
 
 type Props = {
   children?: string;
@@ -12,7 +12,6 @@ type Props = {
   ariaLabel?: string;
   variant?: string;
 };
-
 
 export const Tag = ({
   children,
@@ -31,10 +30,10 @@ export const Tag = ({
       href={href ? href : null}
       type={type}
       aria-label={ariaLabel}
-      style={{background:" rgba(64, 143, 237, 0.16)"}}
+      style={{ background: " rgba(64, 143, 237, 0.16)" }}
       className={cls(
         className,
-        `inline-flex select-none uppercase items-center rounded-sm px-4 py-2 text-sm font-medium cursor-pointer focus:outline-none`,
+        `inline-flex cursor-pointer select-none items-center rounded-sm px-4 py-2 text-sm font-medium uppercase focus:outline-none`
       )}
     >
       {children || (icon ? null : "Dolor Sit")}

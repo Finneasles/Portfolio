@@ -1,15 +1,17 @@
-import React from "react";
 import { LogoComponent, ThemeSwitch } from "@/components";
-import { Button } from "@/components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import { ImNpm } from "react-icons/im";
+import { Button } from "@/components";
+import React from "react";
 
-export const Footer = ({transparentNav}) => {
+export const Footer = ({ transparentNav }) => {
   const socials = [
     { id: "linkedin", href: process.env.NEXT_PUBLIC_LINKEDIN_URL },
     { id: "github", href: process.env.NEXT_PUBLIC_GITHUB_URL },
     { id: "npmjs", href: process.env.NEXT_PUBLIC_NPMJS_URL },
   ];
+
   return (
     <footer aria-label="Site Footer" className="footer-section">
       <div className="top-foot">
@@ -62,24 +64,25 @@ export const Footer = ({transparentNav}) => {
             </div>
 
             <div className="col-span-2 flex gap-4 lg:col-span-5">
-              {socials.map((link) => {return (
-                <a
-                  className="hover:opacity-75"
-                  href={link.href}
-                  key={link.id}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {link.id === "linkedin" ? (
-                    <FaLinkedin />
-                  ) : link.id === "github" ? (
-                    <FaGithub />
-                  ) : link.id === "npmjs" ? (
-                    <ImNpm />
-                  ) : null}
-                </a>
-              );})}
-              
+              {socials.map((link) => {
+                return (
+                  <a
+                    className="hover:opacity-75"
+                    href={link.href}
+                    key={link.id}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.id === "linkedin" ? (
+                      <FaLinkedin />
+                    ) : link.id === "github" ? (
+                      <FaGithub />
+                    ) : link.id === "npmjs" ? (
+                      <ImNpm />
+                    ) : null}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

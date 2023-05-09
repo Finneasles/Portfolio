@@ -2,12 +2,12 @@ import {
   getDefaultStaticTitle as defaultTitle,
   getStaticTitleEnd as TitleEnd,
 } from "@/utils";
-import { CookieConsent, Footer, Navbar } from "@/components";
 import React, { ReactNode, useEffect, useState } from "react";
-import Head from "next/head";
-import { NextRouter } from "next/router";
-import { useScrollProgress } from "@/hooks";
+import { CookieConsent, Footer, Navbar } from "@/components";
 import { useTranslation } from "react-i18next";
+import { useScrollProgress } from "@/hooks";
+import { NextRouter } from "next/router";
+import Head from "next/head";
 
 type Props = {
   children?: ReactNode;
@@ -24,19 +24,16 @@ type Props = {
 const navData = [
   {
     id: "home",
-    name: "Home",
     href: "/",
   },
   {
     id: "about",
-    name: "About",
     href: "/about",
   },
   { id: "projects", name: "Projects", href: "/projects" },
   {
-    id: "pubs",
-    name: "Publications",
-    href: "/publications",
+    id: "snip",
+    href: "/snippets",
   },
 ];
 
@@ -63,14 +60,18 @@ export const Layout = ({
           name="viewport"
           content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
         />
-        <link rel="icon" type="image/png" href={`${process.env.NEXT_PUBLIC_SITE_URL}/images/favicon.png`}/>
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${process.env.NEXT_PUBLIC_SITE_URL}/images/favicon.png`}
+        />
         <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
         />
-        <meta name="theme-color" content="#408FED"/>
+        <meta name="theme-color" content="#408FED" />
         <meta name="description" content={pageDesc || t("hero_desc0")} />
         <meta property="og:title" content={title + TitleEnd()} />
         <meta property="og:description" content={pageDesc || t("hero_desc0")} />
@@ -87,8 +88,16 @@ export const Layout = ({
           sizes="152x152"
           href="/icons/touch-icon-ipad.png"
         />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/180x.png" />
-        <link rel="apple-touch-icon" sizes="167x167" href="/images/icons/167x.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/icons/180x.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="167x167"
+          href="/images/icons/167x.png"
+        />
       </Head>
       {navbar ? (
         <>

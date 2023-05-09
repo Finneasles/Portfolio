@@ -9,7 +9,7 @@ export const Page = ({ pageTitle, router }) => {
   const [title] = useState(pageTitle);
   return (
     <Layout title={title} router={router} transparentNav={true}>
-      <Hero />
+      <Hero src="about" />
       <div className="body-container">
         <div className="main-section">
           <section className="bg-white dark:bg-gray-900">

@@ -25,7 +25,7 @@ export const Component = () => {
           type="checkbox"
           id="themeSwitch"
           value=""
-          className="sr-only peer"
+          className="peer sr-only"
         />
         <div
           onClick={() => {

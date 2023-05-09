@@ -4,7 +4,7 @@ export const Section = () => {
   return (
     <aside
       aria-label="Related articles"
-      className="px-6 py-8 bg-gray-50 dark:bg-gray-800 lg:px-32 lg:py-24 mx-w-4xl"
+      className="mx-w-4xl bg-gray-50 px-6 py-8 dark:bg-gray-800 lg:px-32 lg:py-24"
     >
       <div>
         <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">
@@ -28,7 +28,7 @@ export const Section = () => {
             </p>
             <a
               href="#"
-              className="inline-flex items-center font-medium underline text-primary-600 dark:text-primary-500 underline-offset-4 hover:no-underline"
+              className="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium underline underline-offset-4 hover:no-underline"
             >
               Read in 2 minutes
             </a>
@@ -50,7 +50,7 @@ export const Section = () => {
             </p>
             <a
               href="#"
-              className="inline-flex items-center font-medium underline text-primary-600 dark:text-primary-500 underline-offset-4 hover:no-underline"
+              className="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium underline underline-offset-4 hover:no-underline"
             >
               Read in 12 minutes
             </a>
@@ -72,7 +72,7 @@ export const Section = () => {
             </p>
             <a
               href="#"
-              className="inline-flex items-center font-medium underline text-primary-600 dark:text-primary-500 underline-offset-4 hover:no-underline"
+              className="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium underline underline-offset-4 hover:no-underline"
             >
               Read in 8 minutes
             </a>
@@ -94,7 +94,7 @@ export const Section = () => {
             </p>
             <a
               href="#"
-              className="inline-flex items-center font-medium underline text-primary-600 dark:text-primary-500 underline-offset-4 hover:no-underline"
+              className="text-primary-600 dark:text-primary-500 inline-flex items-center font-medium underline underline-offset-4 hover:no-underline"
             >
               Read in 4 minutes
             </a>

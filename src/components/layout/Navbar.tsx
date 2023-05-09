@@ -4,10 +4,9 @@ import {
   LogoComponent,
   Nav as Menu,
 } from "@/components";
-
+import { NextRouter } from "next/router";
 import React, { useState } from "react";
 import Link from "next/link";
-import { NextRouter } from "next/router";
 
 type Props = {
   menuData: object;
@@ -31,13 +30,16 @@ export const Navbar = ({
   variant = "primary",
 }: Props) => {
   const [visible, setMobileMenu] = useState(false);
+
   return (
     <nav
       aria-label="Site Navigation"
       className={`${variants[variant]} z-[98] h-[96px] w-full border-b px-6 lg:px-32`}
     >
-      <div className="mx-auto flex h-full w-full max-w-4xl items-center justify-between text-sm">
-          <LogoComponent transparentNav={transparentNav} />
+      <div
+        className={`mx-auto flex h-full w-full max-w-4xl items-center justify-between text-sm`}
+      >
+        <LogoComponent transparentNav={transparentNav} />
         <div className="flex w-full items-center justify-end space-x-2">
           <Menu
             transparentNav={transparentNav}

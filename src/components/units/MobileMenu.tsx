@@ -4,7 +4,7 @@ export const Component = ({ data, state }) => {
   return (
     <div className="md:hidden">
       {state.visible ? (
-        <div className="fixed z-[100] right-[-1px] top-0 h-[100vh] w-[100vh] translate-x-[-1px] bg-black bg-opacity-75 text-black transition dark:text-white">
+        <div className="fixed right-[-1px] top-0 z-[100] h-[100vh] w-[100vh] translate-x-[-1px] bg-black bg-opacity-75 text-black transition dark:text-white">
           <div className="fixed right-[-1px] top-0 h-[100vh] w-[24rem] translate-x-[-1px] bg-white transition  dark:bg-gray-900">
             <div className="px-8 pt-8 pb-6">
               <button
@@ -16,7 +16,7 @@ export const Component = ({ data, state }) => {
                   fill="none"
                   stroke="currentColor"
                   aria-hidden="true"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -51,7 +51,7 @@ export const Component = ({ data, state }) => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
+            className="h-6 w-6"
             fill="white"
             viewBox="0 0 24 24"
             stroke="currentColor"

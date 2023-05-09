@@ -1,8 +1,8 @@
-import React from "react";
 import { classesJoin as cls } from "@/utils";
+import React from "react";
 
 type Props = {
-  children?: string;
+  children?: any;
   className?: string;
   href?: string;
   icon?: React.ReactNode;
@@ -20,8 +20,7 @@ const variants = {
   heroPrimary:
     "font-bold uppercase text-[#0D4380] bg-white hover:bg-blue-800 focus:ring-blue-300" +
     "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
-  heroSecondary:
-    "uppercase text-white ring-0",
+  heroSecondary: "uppercase text-white ring-0",
   secondary:
     "uppercase text-blue-600 hover:bg-opacity-32 hover:text-white focus:ring-blue-300 text-[#0056BD]" +
     "dark:text-white bg-opacity-70 hover:dark:bg-opacity-20 dark:focus:ring-blue-800",
@@ -59,11 +58,11 @@ export const Button = ({
       type={type}
       aria-label={ariaLabel}
       target={target}
-      className={cls(
-        size ? sizes[size] : null,
-        className,
-        `inline-flex font-Poppins select-none items-center rounded py-3 text-sm ${variants[variant]} cursor-pointer focus:outline-none`,
-      )}
+      className={`${className} ${
+        size ? sizes[size] : null
+      } inline-flex select-none items-center rounded py-3 font-Poppins text-sm ${
+        variants[variant]
+      } cursor-pointer focus:outline-none`}
     >
       {children || (icon ? null : "Dolor Sit")}
       {icon ? icon : ""}

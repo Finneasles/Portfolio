@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { setCookie, hasCookie } from "cookies-next";
 import { HiInformationCircle } from "react-icons/hi";
-import { Button } from "@/components";
+import { setCookie, hasCookie } from "cookies-next";
+import React, { useEffect, useState } from "react";
 import { useEntryEffect } from "@/hooks";
+import { Button } from "@/components";
 
 export function Component() {
   const [consent, setConsent] = useState(true);
@@ -61,7 +61,6 @@ export function Component() {
             closePopup();
             e.preventDefault();
           }}
-          
         >
           Close
         </Button>

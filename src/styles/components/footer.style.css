@@ -1,6 +1,5 @@
 .footer-section {
-    background: linear-gradient(90deg, rgba(173, 211, 255, 0.08) 0%, rgba(83, 157, 245, 0.08) 100%);
-    @apply border-t border-white/10 bg-gray-100 dark:bg-gray-900;
+    @apply border-t bg-white dark:bg-[#00162D] bg-opacity-60 backdrop-blur-xl dark:border-white/10 border-white/10;
 }
 
 .footer-section .top-foot{

@@ -1,4 +1,4 @@
-import { LogoComponent, ThemeSwitch } from "@/components";
+import { LangSwitchComponent, LogoComponent, ThemeSwitch } from "@/components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { ImNpm } from "react-icons/im";
@@ -101,6 +101,7 @@ export const Footer = ({ transparentNav }) => {
           <nav className="flex justify-end text-xs">
             <ThemeSwitch />
           </nav>
+          <LangSwitchComponent supportedLanguages={["en", "epo"]} />
         </div>
       </div>
     </footer>

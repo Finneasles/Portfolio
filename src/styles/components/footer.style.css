@@ -1,5 +1,5 @@
 .footer-section {
-    @apply border-t bg-white dark:bg-[#00162D] bg-opacity-60 backdrop-blur-xl dark:border-white/10 border-white/10;
+    @apply border-t bg-white dark:bg-[#00162D] bg-opacity-95 backdrop-blur-xl dark:border-white/10 border-white/10;
 }
 
 .footer-section .top-foot{
@@ -7,6 +7,5 @@
 }
 
 .footer-section .bot-foot {
-    background: linear-gradient(180deg, rgba(0, 53, 108, 0.16) 0.18%, rgba(173, 211, 255, 0) 100%);
-    @apply mt-12 px-6 lg:px-0 w-full border-t border-gray-200 py-12 dark:border-white/10;
+    @apply bg-[rgba(0,22,65,0.032)] dark:bg-[rgb(0,22,65)] bg-opacity-95 mt-12 px-6 lg:px-0 w-full border-t border-gray-200 py-12 dark:border-white/10;
 }

@@ -1,15 +1,18 @@
 import { useTranslation } from "react-i18next";
 import { Button, Tag } from "@/components";
+import React, { useState } from "react";
 import { useReadTime } from "@/hooks";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const isSnippet = (data) => {
   return !data.frontMatter.project && !data.frontMatter.page ? true : false;
 };
 export const Component = ({ data }) => {
   const readTime1 = useReadTime({ text: data.markdownBody });
+  const [thumbnail] = useState(data.frontMatter.figure);
+  const [thumbnailCaption] = useState(data.frontMatter.figcaption);
+  const [repoName] = useState(data.frontMatter.repoName);
   const { t } = useTranslation();
   return (
     <article
@@ -17,18 +20,21 @@ export const Component = ({ data }) => {
         background:
           "linear-gradient(180deg, rgba(173, 211, 255, 0.08) 0%, rgba(83, 157, 245, 0.08) 100%)",
       }}
-      className="rounded-sm p-4 shadow-md"
+      className="mb-4 rounded-sm p-4 pb-6 shadow-md"
     >
-      <div
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(84, 158, 246, 0.1536) 0%, rgba(84, 158, 246, 0.4608) 100%)",
-        }}
-        className="aspect-video w-full rounded-sm"
-      ></div>
+      {!isSnippet(data) && !data.frontMatter.setThumb ? (
+        <div className="relative mb-4 aspect-video w-full rounded-sm bg-gradient-to-b from-transparent to-blue-500">
+          <Image
+            src={thumbnail}
+            alt={thumbnailCaption}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      ) : null}
 
-      <div className="flex items-center justify-between py-2">
-        <div className="flex space-x-2">
+      <div className="flex items-center justify-between">
+        <div className="mb-4 flex space-x-2">
           {data.frontMatter.categories.map((tag: string) => {
             return (
               <Tag key={tag} href={`/category/${tag.toLowerCase()}`}>
@@ -37,11 +43,11 @@ export const Component = ({ data }) => {
             );
           })}
         </div>
-        <span className="text-sm">14 days ago</span>
+        <span className="text-sm">{data.frontMatter.date}</span>
       </div>
-      <div className="mb-8 flex-1 space-y-1">
+      <div className="mb-4 flex-1 space-y-1">
         <h2 className="font-Poppins text-2xl font-bold uppercase tracking-tight">
-          <Link href={`${isSnippet(data) ? "/snippets/" : "/"}${data.slug}`}>
+          <Link href={`${isSnippet(data) ? "/s/" : "/"}${data.slug}`}>
             <a>{data.frontMatter.title}</a>
           </Link>
         </h2>
@@ -51,29 +57,47 @@ export const Component = ({ data }) => {
       </div>
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          {data.frontMatter.project ? (
-            <Button href={"publications/" + data.slug} className="px-6">
-              View
-            </Button>
-          ) : (
+          {!data.frontMatter.project ? (
             <Button href={"snippets/" + data.slug} className="px-6">
               {t("viewSnip_label")}
             </Button>
+          ) : (
+            <div className="space-x-1">
+              <Button href={"/p/" + data.slug} className="px-6">
+                {t("view_label")}
+              </Button>
+              <Button
+                href={"/p/" + data.slug + "/src"}
+                className="bg-opacity-[32%] px-6"
+              >
+                {t("viewSrc_label")}
+              </Button>
+            </div>
           )}
 
-          <div className="flex items-center space-x-2">
-            <div className="relative h-7 w-7 rounded-full">
-              <Image
-                className="rounded-full"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
-                alt="Jese Leos avatar"
-                layout="fill"
-              />
+          {data.frontMatter.project !== true ? (
+            <div className="flex items-center space-x-2">
+              <div className="relative h-7 w-7 rounded-full">
+                <Image
+                  className="rounded-full"
+                  src={
+                    data.frontMatter.repoName
+                      ? data.frontMatter.repoName.toLowerCase() === "practice"
+                        ? `/images/repos/practice.png`
+                        : `/images/repos/${data.slug}.png`
+                      : `/images/repos/private.png`
+                  }
+                  alt="Repository Icon"
+                  layout="fill"
+                />
+              </div>
+              <span className="font-medium dark:text-white">
+                {data.frontMatter.project !== true
+                  ? data.frontMatter.repoName || t("privateRepo_label")
+                  : null}
+              </span>
             </div>
-            <span className="font-medium dark:text-white">
-              {data.frontMatter.author.name}
-            </span>
-          </div>
+          ) : null}
         </div>
       </div>
     </article>

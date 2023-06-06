@@ -1,6 +1,8 @@
+import { useTranslation } from "react-i18next";
 import React from "react";
 
 export const Component = ({ data, state }) => {
+  const { t } = useTranslation();
   return (
     <div className="md:hidden">
       {state.visible ? (
@@ -30,13 +32,13 @@ export const Component = ({ data, state }) => {
 
               <div className="relative z-10 mt-[5rem]">
                 <nav className="grid gap-y-8">
-                  {data.map((item: { name: string; href: string }) => (
+                  {data.map((item: { name: string; href: string, id:string }) => (
                     <a
                       key={item.name}
                       href={item.href}
                       className="-m-3 flex items-center rounded-sm border-[1px] border-gray-500/60  p-3 hover:bg-black/20"
                     >
-                      <h1 className="my-3 ml-3 font-bold ">{item.name}</h1>
+                      <h1 className="my-3 ml-3 font-bold "> {t(`${item.id}_label`)}</h1>
                     </a>
                   ))}
                 </nav>

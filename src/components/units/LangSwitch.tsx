@@ -1,55 +1,24 @@
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import { Button } from "@/components";
+import React from "react";
+import i18n from "@/i18n";
+
 import { useTranslation } from "react-i18next";
 
-export const Component = () => {
-  const { t, i18n } = useTranslation();
-  const handleChangeLanguage = (code: string) => i18n.changeLanguage(code);
+function Component({ supportedLanguages }) {
+  const { i18n } = useTranslation();
+
+  function handleChangeLanguage(event) {
+    i18n.changeLanguage(event.target.value);
+  }
 
   return (
-    <div className="relative">
-      <Button
-        href="/hire"
-        onClick={(e) => {
-          e.preventDefault();
-        }}
-        className="h-[44px] bg-opacity-10 px-2"
-        ariaLabel={"Contact me"}
-      >
-        {t("emojiFlag")}
-      </Button>
-
-      <div
-        className="absolute right-0 z-10 mt-2  w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="menu-button"
-        tabIndex={-1}
-      >
-        <div className="py-1" role="none">
-          {i18n.languages.map((lang) => {
-            return (
-              <a
-                href="#"
-                key={lang}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleChangeLanguage(lang);
-                }}
-                className="block px-4 py-2 text-sm text-gray-700"
-                role="menuitem"
-                tabIndex={-1}
-                id="menu-item-0"
-              >
-                {lang}
-              </a>
-            );
-          })}
-        </div>
-      </div>
-    </div>
+    <select value={i18n.language} onChange={handleChangeLanguage}>
+      {supportedLanguages.map((language) => (
+        <option key={language} value={language}>
+          {language}
+        </option>
+      ))}
+    </select>
   );
-};
+}
 
 export default Component;

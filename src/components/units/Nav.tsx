@@ -16,7 +16,7 @@ export const Component = ({ data, router, transparentNav }) => {
         {data.map(
           (e: { id: string; name: string; href: string | UrlObject }) => {
             return (
-              <Link key={e.name} href={e.href}>
+              <Link key={`${e.id}_nav`} href={e.href}>
                 <a
                   className={`${
                     scrollY > 100 || !transparentNav

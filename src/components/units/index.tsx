@@ -19,3 +19,7 @@ export { default as HomeDecorComponent } from "./HomeDecor";
 export { default as AboutDecorComponent } from "./AboutDecor";
 export { default as ProjDecorComponent } from "./ProjDecor";
 export { default as PubDecorComponent } from "./PubDecor";
+export { default as LangSwitchComponent } from "./LangSwitch";
+export { default as SignInButtonComponent } from "./SignInButton";
+export { default as SignInModalComponent } from "./SignInModal";
+

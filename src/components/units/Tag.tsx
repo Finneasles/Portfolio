@@ -13,31 +13,21 @@ type Props = {
   variant?: string;
 };
 
-export const Tag = ({
-  children,
-  className,
-  href,
-  icon,
-  onClick,
-  size,
-  type,
-  ariaLabel,
-  variant = "primary",
-}: Props) => {
+export const Tag = (props : Props) => {
   return (
     <a
-      onClick={onClick}
-      href={href ? href : null}
-      type={type}
-      aria-label={ariaLabel}
+      onClick={props.onClick}
+      href={props.href ? props.href : null}
+      type={props.type}
+      aria-label={props.ariaLabel}
       style={{ background: " rgba(64, 143, 237, 0.16)" }}
       className={cls(
-        className,
+        props.className,
         `inline-flex cursor-pointer select-none items-center rounded-sm px-4 py-2 text-sm font-medium uppercase focus:outline-none`
       )}
     >
-      {children || (icon ? null : "Dolor Sit")}
-      {icon ? icon : ""}
+      {props.children || (props.icon ? null : "Dolor Sit")}
+      {props.icon ? props.icon : ""}
     </a>
   );
 };

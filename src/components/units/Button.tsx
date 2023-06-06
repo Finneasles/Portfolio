@@ -1,4 +1,3 @@
-import { classesJoin as cls } from "@/utils";
 import React from "react";
 
 type Props = {
@@ -15,11 +14,9 @@ type Props = {
 };
 const variants = {
   primary:
-    "uppercase text-white bg-[#408FED] font-bold hover:bg-blue-800 focus:ring-blue-300" +
-    "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
+    "uppercase text-white bg-[#408FED] font-bold hover:bg-[#3081E1] focus:ring-blue-300 dark:focus:ring-blue-800",
   heroPrimary:
-    "font-bold uppercase text-[#0D4380] bg-white hover:bg-blue-800 focus:ring-blue-300" +
-    "dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
+    "font-bold uppercase text-[#0D4380] bg-white hover:bg-opacity-70 focus:ring-blue-300 dark:focus:ring-blue-800",
   heroSecondary: "uppercase text-white ring-0",
   secondary:
     "uppercase text-blue-600 hover:bg-opacity-32 hover:text-white focus:ring-blue-300 text-[#0056BD]" +
@@ -39,33 +36,22 @@ const sizes = {
   lg: "py-[4rem] px-12",
 };
 
-export const Button = ({
-  children,
-  className,
-  href,
-  icon,
-  onClick,
-  size,
-  type,
-  ariaLabel,
-  target,
-  variant = "primary",
-}: Props) => {
+export const Button = (props : Props) => {
   return (
     <a
-      onClick={onClick}
-      href={href ? href : null}
-      type={type}
-      aria-label={ariaLabel}
-      target={target}
-      className={`${className} ${
-        size ? sizes[size] : null
+      onClick={props.onClick}
+      href={props.href ? props.href : null}
+      type={props.type}
+      aria-label={props.ariaLabel}
+      target={props.target}
+      className={`${props.className} ${
+        props.size ? sizes[props.size] : null
       } inline-flex select-none items-center rounded py-3 font-Poppins text-sm ${
-        variants[variant]
+        variants[props.variant || "primary"]
       } cursor-pointer focus:outline-none`}
     >
-      {children || (icon ? null : "Dolor Sit")}
-      {icon ? icon : ""}
+      {props.children || (props.icon ? null : "Dolor Sit")}
+      {props.icon ? props.icon : ""}
     </a>
   );
 };

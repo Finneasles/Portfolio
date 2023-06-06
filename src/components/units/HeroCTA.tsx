@@ -1,8 +1,11 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import { ImNpm } from "react-icons/im";
 import { Button } from "@/components";
 
 const Component = ({ src }: { src?: string }) => {
+  const { t } = useTranslation();
+
   const socials = [
     { id: "linkedin", href: process.env.NEXT_PUBLIC_LINKEDIN_URL },
     { id: "github", href: process.env.NEXT_PUBLIC_GITHUB_URL },
@@ -37,7 +40,7 @@ const Component = ({ src }: { src?: string }) => {
           onClick={src == "about" ? learnMore : letsChat}
           variant="heroPrimary"
         >
-          {src == "about" ? "📫 Learn More" : "👋 Let's Chat"}
+          {src == "about" ? t("learnMore_label") : t("letsChat_label")}
         </Button>
       </div>
       <div className="content-center">

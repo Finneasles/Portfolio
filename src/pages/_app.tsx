@@ -6,6 +6,8 @@ import { Session } from "next-auth";
 import { useGA } from "@/hooks";
 import "@/styles/globals.css";
 import i18n from "@/i18n";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 function MyApp({
   Component,
@@ -14,6 +16,20 @@ function MyApp({
   session: Session;
 }>) {
   useGA({});
+//   const { locale } = useRouter();
+
+// useEffect(() => {
+//   const supportedLanguages = ["en", "epo"];
+//   const currentLanguage = supportedLanguages.includes(i18n.language) ? i18n.language : "en";
+//   const prefix = `/${currentLanguage}`;
+//   const currentPath = window.location.pathname;
+
+//   if (!supportedLanguages.some((lang) => currentPath.startsWith(`/${lang}`))) {
+//     const newPath = `${prefix !== "/en" ? prefix : ""}${currentPath}`;
+//     window.history.replaceState(null, null, newPath);
+//   }
+// }, []);
+
   return (
     <SessionProvider session={pageProps.session} refetchInterval={0}>
       <I18nextProvider i18n={i18n}>

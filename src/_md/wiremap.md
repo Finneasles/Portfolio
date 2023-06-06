@@ -4,11 +4,9 @@ description: "A custom hook for react applications that creates a connection to 
 categories: [ "React.js","Socket.IO" ]
 project: true 
 comments: true
-relatedArticles: true
 date: "Mar 25, 2022"
-figure: "https://repository-images.githubusercontent.com/584224529/39430953-efa7-4b46-b0c7-f89491303b53"
+figure: "/images/wiremap.png"
 figcaption: "tdsc"
-author: {name : "Aliquam" , description: "Graphic Designer, educator & CEO" , image: "/images/authors/aliquam.jpg"}
 ---
 
 This is a custom hook for react applications that creates a connection to a websocket server using the [socket.io-client library](https://socket.io/docs/v4/client-api/). The hook takes in two parameters: a `url: string`, which is the address of the [websocket server](https://socket.io/docs/v4/server-instance/), and an optional `options: object`, which can contain additional options to pass to the io() function.

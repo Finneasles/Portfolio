@@ -1,12 +1,17 @@
 import {
   MobileMenu as Burger,
-  CTA as Buttons,
+  Button,
+  CTA,
   LogoComponent,
   Nav as Menu,
+  SignInButtonComponent,
+  SignInModalComponent,
 } from "@/components";
+import { FaUser } from "react-icons/fa";
 import { NextRouter } from "next/router";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   menuData: object;
@@ -19,7 +24,7 @@ type Props = {
 const variants = {
   primary: "absolute border-transparent border-b-0 text-white",
   fixed:
-    "fixed bg-white dark:bg-[#00162D] bg-opacity-64 backdrop-blur-xl dark:border-white/10 border-white/10 bg-opacity-80",
+    "fixed bg-white dark:bg-[#00162D] bg-opacity-95 backdrop-blur-xl dark:border-white/10 border-white/10 bg-opacity-80",
 };
 
 export const Navbar = ({
@@ -30,6 +35,8 @@ export const Navbar = ({
   variant = "primary",
 }: Props) => {
   const [visible, setMobileMenu] = useState(false);
+  const [modal, setModal] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <nav
@@ -46,7 +53,8 @@ export const Navbar = ({
             data={menuData}
             router={router}
           />
-          <Buttons />
+          <SignInButtonComponent state={{ modal, setModal }} />
+          <CTA />
           <Burger data={menuData} state={{ visible, setMobileMenu }} />
         </div>
       </div>

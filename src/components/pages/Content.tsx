@@ -1,10 +1,10 @@
 import {
-  Author,
-  CommentSection,
-  Layout,
-  MdContent,
   RelatedArticlesSection,
+  CommentSection,
+  MdContent,
   Thumbnail,
+  Author,
+  Layout,
 } from "@/components";
 import { useState } from "react";
 
@@ -46,7 +46,9 @@ export const Page = ({ source, router }) => {
               </div>{" "}
               <footer>
                 {author ? <Author data={author} /> : null}
-                {comments ? <CommentSection /> : null}
+                {comments ? (
+                  <CommentSection data={{ title }} router={router} />
+                ) : null}
               </footer>
             </div>
           </article>

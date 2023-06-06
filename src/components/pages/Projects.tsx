@@ -8,9 +8,10 @@ import { useState } from "react";
 
 export const Page = ({ posts, router }) => {
   const { t } = useTranslation();
+  const pageDesc =  t("LayoutDesc.projects");
   return (
-    <Layout title={t("projects_label")} router={router} transparentNav={true}>
-      <Hero src="proj" />
+    <Layout title={t("projects_label")} router={router} transparentNav={true} pageDesc={pageDesc}>
+      <Hero src="proj" pageDesc={pageDesc} />
       <div className="body-container">
         <div className="main-section">
           <Projects allPosts={posts} />

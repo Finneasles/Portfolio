@@ -8,9 +8,10 @@ import { useState } from "react";
 
 export const Page = ({ posts, router }) => {
   const { t } = useTranslation();
+  const pageDesc =  t("LayoutDesc.snippets");
   return (
-    <Layout title={t("snip_label")} router={router} transparentNav={true}>
-      <Hero src={"pub"} />
+    <Layout title={t("snip_label")} router={router} transparentNav={true} pageDesc={pageDesc}>
+      <Hero src={"pub"}  pageDesc={pageDesc}/>
       <div className="body-container">
         <div className="main-section">
           <Publications allPosts={posts} />

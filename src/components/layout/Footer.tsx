@@ -101,7 +101,7 @@ export const Footer = ({ transparentNav }) => {
           <nav className="flex justify-end text-xs">
             <ThemeSwitch />
           </nav>
-          <LangSwitchComponent supportedLanguages={["en", "epo"]} />
+          {/* <LangSwitchComponent supportedLanguages={["en", "epo"]} /> */}
         </div>
       </div>
     </footer>

@@ -14,7 +14,7 @@ export const Page = ({ router }) => {
       router={router}
       transparentNav={true}
     >
-      <Hero />
+      <Hero size={"full"} src={"404"}/>
     </Layout>
   );
 };

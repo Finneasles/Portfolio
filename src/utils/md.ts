@@ -42,7 +42,6 @@ export async function getAllPostsWithFrontMatter(dataType?: string) {
   });
 }
 
-// Helper function to get all .md files in a directory and its subdirectories
 async function getMdFiles(
   directory: string
 ): Promise<{ path: string; slug: string }[]> {
@@ -51,8 +50,13 @@ async function getMdFiles(
     entries.map(async (entry) => {
       const entryPath = path.join(directory, entry.name);
       if (entry.isDirectory()) {
-        return getMdFiles(entryPath);
-      } else if (entry.isFile() && entry.name.endsWith(".md")) {
+        const subFiles = await getMdFiles(entryPath);
+        return subFiles;
+      } else if (
+        entry.isFile() &&
+        entry.name.endsWith(".md") &&
+        entry.name !== "_posts.md"
+      ) {
         return {
           path: entryPath,
           slug: entry.name.replace(".md", ""),
@@ -61,7 +65,11 @@ async function getMdFiles(
       return null;
     })
   );
-  return files.filter((file) => file !== null).flat();
+  const flattenedFiles = files.filter((file) => file !== null).flat();
+  if (directory === "_posts" && flattenedFiles.length === 0) {
+    return [{ path: "", slug: "" }]; // return an empty post object
+  }
+  return flattenedFiles;
 }
 
 async function collateCategories(dataType: string) {

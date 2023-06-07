@@ -63,7 +63,14 @@ export const Component = ({ data }) => {
             </Button>
           ) : (
             <div className="space-x-1">
-              <Button href={"/p/" + data.slug} className="px-6">
+              <Button
+                href={
+                  !data.frontMatter.view_url
+                    ? "/s/" + data.slug
+                    : data.frontMatter.view_url
+                }
+                className="px-6"
+              >
                 {t("view_label")}
               </Button>
               <Button

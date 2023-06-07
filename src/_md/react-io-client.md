@@ -4,7 +4,7 @@ description: "A custom hook for react applications that creates a connection to 
 categories: [ "React.js","Socket.IO" ]
 project: true 
 comments: true
-date: "Mar 25, 2022"
+date: "Jan 1, 2023"
 figure: "/images/react-io-client.png"
 figcaption: "tdsc"
 ---

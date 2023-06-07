@@ -45,7 +45,7 @@ export function Component() {
         identifying information is collected. Please read{" "}
         <a
           className="font-bold underline"
-          href="/privacy-policy"
+          href="/policy"
           target="_blank"
         >
           Privacy Policy.

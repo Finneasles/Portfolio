@@ -17,8 +17,8 @@ const Page = ({ posts, router }) => {
       <Hero />
       <div className="body-container">
         <div className="main-section">
-          <Projects allPosts={posts} />
-          <Publications allPosts={posts} />
+          <Projects allPosts={posts} src={"home"} />
+          <Publications allPosts={posts} src={"home"} />
         </div>
       </div>
     </Layout>

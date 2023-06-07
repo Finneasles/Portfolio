@@ -39,3 +39,9 @@ a {
     color-scheme: dark;
   }
 }
+
+#disqus_thread {
+  background: rgba(0,0,0,0.5)!important;
+  padding: 15px;
+}
+

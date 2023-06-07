@@ -19,6 +19,7 @@ type Props = {
   cookieConsent?: boolean;
   router: NextRouter;
   transparentNav?: boolean;
+  type?: string;
 };
 
 const navData = [
@@ -46,11 +47,27 @@ export const Layout = ({
   cookieConsent = true,
   footer = true,
   navbar = true,
+  type,
   transparentNav = false,
 }: Props) => {
   const { scrollY, progress } = useScrollProgress();
   const { t } = useTranslation();
-
+  const [desc, setDesc] = useState(pageDesc || t("site_desc"));
+  const canonicalUrl =
+    process.env.NEXT_PUBLIC_SITE_URL +
+    (router?.query?.static
+      ? router.query.static
+      : router?.pathname?.substring(1));
+  const pageTitle = title
+    ? title + " — " + process.env.NEXT_PUBLIC_APP_TITLE
+    : process.env.NEXT_PUBLIC_APP_TITLE +
+      " — " +
+      process.env.NEXT_PUBLIC_STATIC_TITLE;
+  const pageType = type || "website";
+  const pageAuthor = process.env.NEXT_PUBLIC_APP_TITLE;
+  const pageThumb =
+    thumbSrc || `${process.env.NEXT_PUBLIC_SITE_URL}images/thumb-min.png`;
+ 
   return (
     <div>
       <Head>
@@ -59,12 +76,7 @@ export const Layout = ({
         <meta
           name="viewport"
           content="viewport-fit=cover, user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href={`${process.env.NEXT_PUBLIC_SITE_URL}/images/favicon.png`}
-        />
+        />  <link rel="icon" type="image/png" href={"/images/icons/fav.ico"} />
         <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
@@ -72,31 +84,37 @@ export const Layout = ({
           content="black-translucent"
         />
         <meta name="theme-color" content="#408FED" />
-        <meta name="description" content={pageDesc || t("hero_desc0")} />
-        <meta property="og:title" content={title + TitleEnd()} />
-        <meta property="og:description" content={pageDesc || t("hero_desc0")} />
+        <meta name="description" content={desc} />
+
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={desc} />
+        <meta property="author" content={pageAuthor} />
         <meta
-          property="og:image"
-          content={
-            thumbSrc ||
-            `${process.env.NEXT_PUBLIC_SITE_URL}/images/thumb-unset.jpg`
-          }
+          property="og:site_name"
+          content={process.env.NEXT_PUBLIC_APP_TITLE}
         />
-        <link rel="apple-touch-icon" href="/images/icons/152x.png" />
+        <meta property="og:type" content={pageType} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={pageThumb} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content="@wiremap" />
+        <meta property="twitter:title" content={pageTitle}></meta>
+
         <link
           rel="apple-touch-icon"
           sizes="152x152"
-          href="/icons/touch-icon-ipad.png"
+          href="/images/icons/152.png"
         />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/images/icons/180x.png"
+          href="/images/icons/180.png"
         />
         <link
           rel="apple-touch-icon"
           sizes="167x167"
-          href="/images/icons/167x.png"
+          href="/images/icons/167.png"
         />
       </Head>
       {navbar ? (

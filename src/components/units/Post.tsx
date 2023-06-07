@@ -58,7 +58,7 @@ export const Component = ({ data }) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           {!data.frontMatter.project ? (
-            <Button href={"snippets/" + data.slug} className="px-6">
+            <Button href={"/s/" + data.slug} className="px-6">
               {t("viewSnip_label")}
             </Button>
           ) : (
@@ -66,7 +66,7 @@ export const Component = ({ data }) => {
               <Button
                 href={
                   !data.frontMatter.view_url
-                    ? "/s/" + data.slug
+                    ? "/" + data.slug
                     : data.frontMatter.view_url
                 }
                 className="px-6"

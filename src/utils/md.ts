@@ -72,8 +72,8 @@ async function getMdFiles(
   return flattenedFiles;
 }
 
-async function collateCategories(dataType: string) {
-  const files = fs.readdirSync(path.join(root, dataType));
+export async function collateCategories(dataType?: string) {
+  const files = fs.readdirSync(dataType ? path.join(root, dataType) : root);
   let allCategories = new Set<string>(); // to ensure only unique tags are added
 
   files.map((postSlug) => {

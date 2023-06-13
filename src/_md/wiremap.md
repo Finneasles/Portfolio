@@ -1,9 +1,8 @@
 ---
 title: "Wirem.app"
-description: "A custom hook for react applications that creates a connection to a websocket server using the socket.io-client library."
-categories: [ "React.js","Socket.IO" ]
+description: "An application that lets you easily visualise your application sitemap structure."
+categories: [ "Sitemap","Visualization"]
 project: true 
-comments: true
 date: "Apr 14, 2023"
 figure: "/images/wiremap.png"
 figcaption: "tdsc"

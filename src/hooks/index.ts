@@ -3,4 +3,3 @@ export { default as useScrollProgress } from "./scrollY";
 export { default as useEntryEffect } from "./entryEffect";
 export { default as useReadTime } from "./readTime";
 export { default as useLocale } from "./countryCode";
-export { default as useGA } from "./ga";

@@ -35,6 +35,9 @@ const resources = {
       snip_label: "Snippets",
       viewSnip_label: "View Snippet",
       lost_label: "Lost?",
+      notFound_label:"Page Not Found",
+      news_label: "Get the latest news!",
+      news_desc:"Sign up to receive email notifications and stay updated with the latest posts!"
     },
   },
   epo: {

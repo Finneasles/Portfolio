@@ -33,15 +33,25 @@ const Component = ({ src }: { src?: string }) => {
   return (
     <div className="flex flex-col drop-shadow-md">
       <div>
-        <Button
-          className="px-12"
-          href="/about"
-          size="sm"
-          onClick={src == "about" ? learnMore : letsChat}
-          variant="heroPrimary"
-        >
-          {src == "about" ? t("learnMore_label") : t("letsChat_label")}
-        </Button>
+        {src !== "404" ? (
+          <Button
+            className="px-12"
+            href="/about"
+            size="sm"
+            onClick={src == "about" ? learnMore : letsChat}
+            variant="heroPrimary"
+          >
+            {src == "about"
+              ? t("learnMore_label")
+              : src == "projects"
+              ? t("projectCTA_label")
+              : t("letsChat_label")}
+          </Button>
+        ) : (
+          <Button className="px-12" href="/" size="sm" variant="heroPrimary">
+            🏠 {t("home_label")}
+          </Button>
+        )}
       </div>
       <div className="content-center">
         <span className="text-xs font-bold uppercase text-white md:mx-2">

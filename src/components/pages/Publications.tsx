@@ -4,7 +4,6 @@ import {
   Layout,
 } from "@/components";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 
 export const Page = ({ posts, router }) => {
   const { t } = useTranslation();

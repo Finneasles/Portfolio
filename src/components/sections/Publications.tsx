@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Post } from "@/components";
+import { Button, Post } from "@/components";
 import React from "react";
 
 export const Section = ({
@@ -11,20 +11,35 @@ export const Section = ({
 }) => {
   const { t } = useTranslation();
 
-  function sortAndSliceData() {
-    const sortedData = allPosts
-      .filter(
-        (post) =>
-          post.frontMatter.project !== true && post.frontMatter.page !== true
-      )
-      .sort((a, b) => {
-        const dateA = new Date(a.frontMatter.date).getTime();
-        const dateB = new Date(b.frontMatter.date).getTime();
-        return dateB - dateA;
-      });
+  const sortedData = allPosts
+    .filter(
+      (post) =>
+        post.frontMatter.snippet !== true &&
+        post.frontMatter.project !== true &&
+        post.frontMatter.page !== true
+    )
+    .sort((a, b) => {
+      const dateA = new Date(a.frontMatter.date).getTime();
+      const dateB = new Date(b.frontMatter.date).getTime();
+      return dateB - dateA;
+    });
 
+  function sortAndSliceData() {
     const slicedData = src === "home" ? sortedData.slice(0, 4) : sortedData;
     return slicedData;
+  }
+  const More =()=>{
+    return (      <div className="flex w-full justify-center py-4">
+    {sortedData.length > 4 && (
+      <Button
+        href="/snippets/?scroll=4"
+        className="h-12 w-full px-4 tracking-wide sm:ml-4 sm:mt-0 sm:w-auto sm:flex-shrink-0"
+        type="submit"
+      >
+        View More {`(${sortedData.length - 4})`}
+      </Button>
+    )}
+  </div>)
   }
 
   return (
@@ -35,6 +50,7 @@ export const Section = ({
           return <Post key={e.slug} data={e} />;
         })}
       </div>
+      {src !== "home" ? null : <More />}
     </section>
   );
 };

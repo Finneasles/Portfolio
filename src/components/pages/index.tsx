@@ -4,3 +4,4 @@ export { default as Homepage } from "./Homepage";
 export { default as Four0FourPage } from "./404";
 export { default as PublicationsPage } from "./Publications";
 export { default as ProjectsPage } from "./Projects";
+export { default as CatPage } from "./Categories";

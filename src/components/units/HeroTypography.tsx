@@ -15,15 +15,21 @@ const Component = ({ src, pageDesc }: { src: string; pageDesc: string }) => {
           style={{ color: "rgba(255, 255, 255, 0.48)" }}
           className=" text-xl font-normal normal-case leading-none tracking-tight md:text-2xl"
         >
-          {src == "404" ? t("lost_label") : t("hero_span0")}
+          {src == "404" ? t("notFound_label") : t("hero_span0")}
         </span>
         <h1 className="mb-8 font-Poppins text-4xl font-bold uppercase leading-none tracking-tight text-white drop-shadow-md md:text-6xl">
-          <span className="absolute mb-4 flex-1 flex-shrink-0 items-center rounded-md bg-yellow-400 px-4 py-2">
-            <span className="mr-6 overflow-hidden">{displayText}</span>
-            <FlashingCursor interval={700} />
-          </span>
-          <br />
-          <span className="mt-6 inline-block">Developer</span>
+          {src == "404" ? (
+            t("lost_label")
+          ) : (
+            <>
+              <span className="absolute mb-4 flex-1 flex-shrink-0 items-center rounded-md bg-yellow-400 px-4 py-2">
+                <span className="mr-6 overflow-hidden">{displayText}</span>
+                <FlashingCursor interval={700} />
+              </span>
+              <br />
+            </>
+          )}
+          {src !== "404" && <span className="mt-6 inline-block">Developer</span>}
         </h1>
       </div>
       <div className="flex">

@@ -11,6 +11,7 @@ type Props = {
   ariaLabel?: string;
   variant?: string;
   target?: string;
+  disabled?: boolean
 };
 const variants = {
   primary:

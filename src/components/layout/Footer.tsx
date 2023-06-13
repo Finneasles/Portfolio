@@ -3,7 +3,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { ImNpm } from "react-icons/im";
 import { Button } from "@/components";
-import React from "react";
+import React, { useState } from "react";
+import useEmailSubscription from "@/hooks/newsletter";
 
 export const Footer = ({ transparentNav }) => {
   const socials = [
@@ -11,6 +12,22 @@ export const Footer = ({ transparentNav }) => {
     { id: "github", href: process.env.NEXT_PUBLIC_GITHUB_URL },
     { id: "npmjs", href: process.env.NEXT_PUBLIC_NPMJS_URL },
   ];
+  const { t } = useTranslation();
+
+  const { email, setEmail, isLoading, error, success, subscribe } =
+    useEmailSubscription();
+
+  const [tooltip, setTooltip] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    subscribe();
+    setTooltip(true);
+    setEmail("");
+    setTimeout(() => {
+      setTooltip(false);
+    }, 6000);
+  };
 
   return (
     <footer aria-label="Site Footer" className="footer-section">
@@ -24,12 +41,11 @@ export const Footer = ({ transparentNav }) => {
             <div className="col-span-2">
               <div>
                 <h2 className="font-Poppins text-2xl font-bold uppercase">
-                  Get the latest news!
+                  {t("news_label")}
                 </h2>
 
                 <p className="text-gray-500 dark:text-gray-400">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
-                  non cupiditate quae nam molestias.
+                  {t("news_desc")}
                 </p>
               </div>
             </div>
@@ -45,19 +61,28 @@ export const Footer = ({ transparentNav }) => {
                   Email{" "}
                 </label>
 
-                <div className="rounded-sm border border-gray-200 px-2 py-2 dark:border-white/10 sm:flex sm:items-center">
+                <div className="relative rounded-sm border border-gray-200 px-2 py-2 dark:border-white/10 sm:flex sm:items-center">
+                  {tooltip ? (success || error) && (
+                    <span className="tooltip absolute bottom-full  mb-4 transform whitespace-nowrap rounded bg-gray-800 px-2 py-1 text-xs text-white">
+                      {error || !success ? error : "Subscription successful."}
+                    </span>
+                  ) : null}
                   <input
                     className="h-12 w-full border-none bg-transparent p-2 text-sm font-medium uppercase tracking-widest placeholder-gray-400"
                     type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
                     id="email"
                     placeholder="Enter your email"
                   />
                   <Button
-                    href="#"
+                    href="/"
                     className="h-12 w-full px-4 tracking-wide sm:ml-4 sm:mt-0 sm:w-auto sm:flex-shrink-0"
                     type="submit"
+                    onClick={handleSubmit}
+                    disabled={isLoading}
                   >
-                    Sign Up
+                    {isLoading ? "Signing Up..." : "Sign Up"}
                   </Button>
                 </div>
               </form>
@@ -101,7 +126,6 @@ export const Footer = ({ transparentNav }) => {
           <nav className="flex justify-end text-xs">
             <ThemeSwitch />
           </nav>
-          {/* <LangSwitchComponent supportedLanguages={["en", "epo"]} /> */}
         </div>
       </div>
     </footer>

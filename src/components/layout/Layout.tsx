@@ -52,22 +52,17 @@ export const Layout = ({
 }: Props) => {
   const { scrollY, progress } = useScrollProgress();
   const { t } = useTranslation();
-  const [desc, setDesc] = useState(pageDesc || t("site_desc"));
+  const [desc, setDesc] = useState(pageDesc || t("layoutDesc.home"));
   const canonicalUrl =
     process.env.NEXT_PUBLIC_SITE_URL +
     (router?.query?.static
       ? router.query.static
       : router?.pathname?.substring(1));
-  const pageTitle = title
-    ? title + " — " + process.env.NEXT_PUBLIC_APP_TITLE
-    : process.env.NEXT_PUBLIC_APP_TITLE +
-      " — " +
-      process.env.NEXT_PUBLIC_STATIC_TITLE;
   const pageType = type || "website";
-  const pageAuthor = process.env.NEXT_PUBLIC_APP_TITLE;
+  const pageAuthor = process.env.NEXT_PUBLIC_STATIC_TITLE;
   const pageThumb =
     thumbSrc || `${process.env.NEXT_PUBLIC_SITE_URL}images/thumb-min.png`;
- 
+
   return (
     <div>
       <Head>
@@ -86,7 +81,7 @@ export const Layout = ({
         <meta name="theme-color" content="#408FED" />
         <meta name="description" content={desc} />
 
-        <meta property="og:title" content={pageTitle} />
+        <meta property="og:title" content={ `${title} — ${process.env.NEXT_PUBLIC_STATIC_TITLE}` } />
         <meta property="og:description" content={desc} />
         <meta property="author" content={pageAuthor} />
         <meta
@@ -97,8 +92,8 @@ export const Layout = ({
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={pageThumb} />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:site" content="@wiremap" />
-        <meta property="twitter:title" content={pageTitle}></meta>
+        <meta property="twitter:site" content="@f1n-dev" />
+        <meta property="twitter:title" content={ `${title} — ${process.env.NEXT_PUBLIC_STATIC_TITLE}`}></meta>
 
         
         <link

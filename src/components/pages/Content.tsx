@@ -18,23 +18,20 @@ export const Page = ({ source, router }) => {
   const [content] = useState(source.markdownBody);
   const [comments] = useState(source.frontMatter.comments);
   const [isPage] = useState(source.frontMatter.page);
-  const [hero] = useState(source.frontMatter.hero);
   const [slug] = useState(source.slug);
   const [relatedArticles] = useState(source.frontMatter.relatedArticles);
-  const articleStyle =
-    "format format-sm sm:format-base lg:format-lg format-blue dark:format-invert w-full";
   return (
     <Layout
       title={title}
       router={router}
       pageDesc={description}
       thumbSrc={thumbnail}
-      transparentNav={hero ? true : false}
+      transparentNav={source.frontMatter.hero ? true : false}
     >
-      {hero ? <Hero src={"about"} pageDesc={description} /> : null}
+      {source.frontMatter.hero ? <Hero src={"about"} pageDesc={description} /> : null}
       <div className="body-container">
-        <main className="main-section">
-          <article className={articleStyle + hero ? "" : "py-32"}>
+        <main className={"main-section"}>
+          <article className={`${source.frontMatter.hero  ? "" : "pt-20"} format format-sm sm:format-base lg:format-lg format-blue dark:format-invert w-full`}>
             <header className="not-format mb-2 lg:mb-6">
               <h1 className="section-title-l">{title}</h1>
               {!isPage && description ? <p>{description}</p> : null}

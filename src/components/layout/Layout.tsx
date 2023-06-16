@@ -2,7 +2,7 @@ import {
   getDefaultStaticTitle as defaultTitle,
   getStaticTitleEnd as TitleEnd,
 } from "@/utils";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { CookieConsent, Footer, Navbar } from "@/components";
 import { useTranslation } from "react-i18next";
 import { useScrollProgress } from "@/hooks";
@@ -52,7 +52,7 @@ export const Layout = ({
 }: Props) => {
   const { scrollY, progress } = useScrollProgress();
   const { t } = useTranslation();
-  const [desc, setDesc] = useState(pageDesc || t("layoutDesc.home"));
+  const [desc, setDesc] = useState(pageDesc);
   const canonicalUrl =
     process.env.NEXT_PUBLIC_SITE_URL +
     (router?.query?.static
@@ -79,10 +79,10 @@ export const Layout = ({
           content="black-translucent"
         />
         <meta name="theme-color" content="#408FED" />
-        <meta name="description" content={desc} />
+        <meta name="description" content={desc || t("LayoutDesc.home")} />
 
         <meta property="og:title" content={ `${title} — ${process.env.NEXT_PUBLIC_STATIC_TITLE}` } />
-        <meta property="og:description" content={desc} />
+        <meta property="og:description" content={desc || t("LayoutDesc.home")} />
         <meta property="author" content={pageAuthor} />
         <meta
           property="og:site_name"

@@ -13,7 +13,7 @@ const Page = ({ posts, router }) => {
   const { t } = useTranslation();
 
   return (
-    <Layout title={t("home_label")} pageDesc={t("LayoutDesc.home")} router={router} transparentNav={true}>
+    <Layout title={t("home_label")} router={router} transparentNav={true}>
       <Hero />
       <div className="body-container">
         <div className="main-section">

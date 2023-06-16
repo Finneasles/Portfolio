@@ -1,21 +1,72 @@
 ---
 title: "useTypewriter"
 categories: [ "React","Hooks", "JavaScript" ]
-comments: true
-relatedArticles: true
-date: "Mar 25, 2022"
+comments: false
+relatedArticles: false
+date: "May 7, 2023"
 repoName: "Practice"
 ---
-consectetur adipiscing elit. Etiam mollis dapibus libero, vitae sagittis libero pharetra vel. Donec at ligula est. Donec tincidunt tortor quis leo vulputate ornare. Pellentesque massa nulla, volutpat at odio non, lacinia posuere quam. Nullam diam mi, cursus ultricies lacinia quis, suscipit sit amet nisl. Phasellus ullamcorper fermentum eros, vulputate congue est tempus quis. Phasellus porttitor ullamcorper volutpat. Pellentesque in vestibulum ipsum. Sed eget neque augue. Suspendisse tristique augue eleifend nulla faucibus fringilla. In id metus eros. Etiam placerat ex leo, in semper est pretium quis. Proin nec dui porta, vehicula est ac, sodales felis. Vestibulum scelerisque cursus turpis vitae hendrerit. Aliquam ut nunc at eros bibendum condimentum id in ligula.
-
-## Sed tincidunt purus nisi
-
-eu tristique libero commodo at. Morbi aliquam purus ex, eget scelerisque arcu malesuada in. Vestibulum quis nisi volutpat nunc semper gravida. Morbi molestie, risus sed semper ullamcorper, neque massa ullamcorper dolor, eget rutrum dolor sem vel diam. Etiam non luctus magna, eget dictum ex. Pellentesque pulvinar arcu accumsan augue mattis auctor. Duis non metus sed libero blandit finibus. Sed bibendum odio quis nisl gravida tincidunt. Quisque cursus venenatis risus vel commodo. Donec placerat pharetra mi ut cursus. Nulla eleifend sapien turpis, sit amet luctus dolor rhoncus ac. Cras feugiat, sapien a placerat maximus, augue erat sodales felis, sed ultricies nunc mauris sed sem. Nam lacus elit, faucibus non justo eget, suscipit aliquam ante. Suspendisse a lacinia magna. Suspendisse quis diam non ante dapibus suscipit rhoncus a dui. Phasellus sollicitudin eros eu tristique ornare.
 
 ```js
 
-function Hello(){
-    console.log("Hello World")
-}
+import { useState, useEffect } from "react";
+
+const useTypingEffect = ({
+  text,
+  typingDelay = 20,
+  deletingDelay = 15,
+  pauseDelay = 7500,
+}: {
+  text: any[];
+  typingDelay?: number;
+  deletingDelay?: number;
+  pauseDelay?: number;
+}) => {
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const currentText = text[currentIndex];
+
+    let timer;
+
+    if (!isDeleting) {
+      // adding text
+      timer = setTimeout(() => {
+        setDisplayText(currentText.substring(0, displayText.length + 1));
+        if (displayText.length === currentText.length) {
+          timer = setTimeout(() => {
+            setIsDeleting(true);
+          }, pauseDelay);
+        }
+      }, typingDelay);
+    } else {
+      // deleting text
+      timer = setTimeout(() => {
+        setDisplayText(currentText.substring(0, displayText.length - 1));
+        if (displayText.length === 0) {
+          // switch to typing mode
+          setIsDeleting(false);
+          setCurrentIndex((currentIndex + 1) % text.length);
+        }
+      }, deletingDelay);
+    }
+
+    return () => clearTimeout(timer);
+  }, [
+    displayText,
+    currentIndex,
+    isDeleting,
+    text,
+    typingDelay,
+    deletingDelay,
+    pauseDelay,
+  ]);
+
+  return displayText;
+};
+
+export default useTypingEffect;
 
 ```

@@ -1,9 +1,9 @@
 ---
-title: "sqInRect"
-categories: [ "Arrays","JavaScript" ]
+title: "isSquare"
+categories: [ "Shapes","JavaScript" ]
 comments: false
 relatedArticles: false
-date: "Apr 13, 2023"
+date: "Mar 29, 2023"
 repoName: "Practice"
 ---
 

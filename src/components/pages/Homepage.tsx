@@ -5,7 +5,6 @@ import {
   Layout,
 } from "@/components";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 
 const pageTitle = "Home";
 

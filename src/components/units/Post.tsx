@@ -33,7 +33,7 @@ export const Component = ({ data }) => {
         </div>
       ) : null}
 
-      <div className="mb-4 flex-1 space-y-1">
+      <div className="mb-4 flex-1 space-y-2">
         <h2 className="font-Poppins text-2xl font-bold uppercase tracking-tight">
           <Link
             href={
@@ -59,34 +59,8 @@ export const Component = ({ data }) => {
         </p>
       </div>
 
-      <div className="flex items-center justify-between">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          {!data.frontMatter.project ? (
-            <Button href={"/s/" + data.slug} className="px-6">
-              {t("viewSnip_label")}
-            </Button>
-          ) : (
-            <div className="space-x-1">
-              <Button
-                href={
-                  !data.frontMatter.view_url
-                    ? "/" + data.slug
-                    : data.frontMatter.view_url
-                }
-                className="px-6"
-              >
-                {t("view_label")}
-              </Button>
-              <Button
-                href={"/p/" + data.slug + "/src"}
-                className="bg-opacity-[32%] px-6"
-              >
-                {t("viewSrc_label")}
-              </Button>
-            </div>
-          )}
-
+      <div className="items-left flex flex-col justify-between space-y-4">
+        <div className="flex flex-row">
           {data.frontMatter.project !== true ? (
             <div className="flex items-center space-x-2">
               <div className="relative h-7 w-7 rounded-full">
@@ -110,12 +84,47 @@ export const Component = ({ data }) => {
               </span>
             </div>
           ) : null}
+          <span
+            className={`flex w-full items-center pt-1 text-xs dark:text-[#ffffffab] ${
+              !data.frontMatter.project ? "ml-4" : "ml-0"
+            }`}
+          >
+            {data.frontMatter.date}
+          </span>
+        </div>
+
+        <div className="flex items-center">
+          {!data.frontMatter.project ? (
+            <Button href={"/s/" + data.slug} className="px-6">
+              {t("viewSnip_label")}
+            </Button>
+          ) : (
+            <div className="space-x-1">
+              <Button
+                href={
+                  !data.frontMatter.view_url
+                    ? "/" + data.slug
+                    : data.frontMatter.view_url
+                }
+                target="_blank"
+                className="px-6"
+              >
+                {t("view_label")}
+              </Button>
+
+              {data.frontMatter.repository && (
+                <Button
+                  href={data.frontMatter.repository}
+                  className="bg-opacity-[32%] px-6"
+                  target="_blank"
+                >
+                  {t("viewSrc_label")}
+                </Button>
+              )}
+            </div>
+          )}
         </div>
       </div>
-        <span className="text-sm">{data.frontMatter.date}</span>
-      </div>
-
-     
     </article>
   );
 };

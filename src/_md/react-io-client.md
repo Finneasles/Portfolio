@@ -2,6 +2,7 @@
 title: "react-io-client"
 description: "A custom hook for react applications that creates a connection to a websocket server using the socket.io-client library."
 categories: ["React", "socket.io","react-hooks" ]
+repository: "https://github.com/finneasles/react-io-client/"
 project: true 
 snippet: false
 date: "Jan 1, 2023"

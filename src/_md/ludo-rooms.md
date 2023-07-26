@@ -3,7 +3,6 @@ title: "ludo-rooms"
 description: "A game rooms server handler implemented using Socket.IO and Typescript."
 categories: ["socket.io","TypeScript" ]
 project: true 
-snippet: false
 repository: https://github.com/ludo-rooms/client/
 date: "Jun 15, 2023"
 figure: "/images/ludo-rooms.png"

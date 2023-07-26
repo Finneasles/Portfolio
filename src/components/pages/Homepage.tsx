@@ -17,7 +17,7 @@ const Page = ({ posts, router }) => {
       <div className="body-container">
         <div className="main-section">
           <Projects allPosts={posts} src={"home"} />
-          <Publications allPosts={posts} src={"home"} />
+          {/* <Publications allPosts={posts} src={"home"} /> */}
         </div>
       </div>
     </Layout>

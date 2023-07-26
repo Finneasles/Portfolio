@@ -32,10 +32,7 @@ const navData = [
     href: "/about",
   },
   { id: "projects", name: "Projects", href: "/projects" },
-  {
-    id: "snip",
-    href: "/snippets",
-  },
+
 ];
 
 export const Layout = ({

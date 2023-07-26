@@ -106,7 +106,7 @@ export const Component = ({ data }) => {
                     ? "/" + data.slug
                     : data.frontMatter.view_url
                 }
-                target="_blank"
+                target={data.frontMatter.view_url && "_blank"}
                 className="px-6"
               >
                 {t("view_label")}

@@ -8,7 +8,7 @@ export const Component = ({ data, router, transparentNav }) => {
   const [active, setActive] = useState("");
   const { t } = useTranslation();
 
-  const currentPathname = router?.pathname;
+  const currentPathname = router.query.content == "about" ? `/${router.query.content}` : router.pathname;
   const { scrollY } = useScrollProgress();
   return (
     <div className="mr-0 flex grow items-center md:justify-center lg:mr-4 lg:justify-end">

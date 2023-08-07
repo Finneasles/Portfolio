@@ -30,6 +30,36 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  @apply text-2xl mb-2
+}
+
+h3 {
+  @apply text-5xl
+}
+
+h4 {
+  @apply text-6xl
+}
+
+h3 {
+  @apply text-2xl
+}
+
+
+h1 {
+  @apply text-9xl
+}
+
+article pre {
+@apply overflow-hidden w-full flex
+}
+
+article pre code {
+  @apply flex-grow text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6
+  }
+
+
 * {
   box-sizing: border-box;
 }
@@ -38,10 +68,5 @@ a {
   html {
     color-scheme: dark;
   }
-}
-
-#disqus_thread {
-  background: rgba(0,0,0,0.5)!important;
-  padding: 15px;
 }
 

@@ -34,22 +34,11 @@ h2 {
   @apply text-2xl mb-2
 }
 
-h3 {
-  @apply text-5xl
-}
-
-h4 {
-  @apply text-6xl
-}
 
 h3 {
   @apply text-2xl
 }
 
-
-h1 {
-  @apply text-9xl
-}
 
 article pre {
 @apply overflow-hidden w-full flex

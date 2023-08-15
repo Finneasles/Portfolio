@@ -4,22 +4,21 @@ import { useScrollProgress } from "@/hooks";
 import { UrlObject } from "url";
 import Link from "next/link";
 
-export const Component = ({ data, router, transparentNav }) => {
+export const NavComponent = (props) => {
   const [active, setActive] = useState("");
-  const { t } = useTranslation();
 
-  const currentPathname = router.query.content == "about" ? `/${router.query.content}` : router.pathname;
+  const currentPathname = props.router.query.content == "about" ? `/${props.router.query.content}` : props.router.pathname;
   const { scrollY } = useScrollProgress();
   return (
     <div className="mr-0 flex grow items-center md:justify-center lg:mr-4 lg:justify-end">
       <nav className="hidden items-center space-x-6 px-2 uppercase drop-shadow-md md:flex ">
-        {data.map(
+        {props.menuData.map(
           (e: { id: string; name: string; href: string | UrlObject }) => {
             return (
               <Link key={`${e.id}_nav`} href={e.href}>
                 <a
                   className={`${
-                    scrollY > 100 || !transparentNav
+                    scrollY > 100 || !props.transparentNav
                       ? "text-[#0D4380]"
                       : "text-white"
                   } font-semibold hover:opacity-100 dark:text-white ${
@@ -30,7 +29,7 @@ export const Component = ({ data, router, transparentNav }) => {
                       : "opacity-70"
                   }`}
                 >
-                  {t(`${e.id}_label`)}
+                  {props.t(`${e.id}_label`)}
                 </a>
               </Link>
             );
@@ -41,4 +40,4 @@ export const Component = ({ data, router, transparentNav }) => {
   );
 };
 
-export default Component;
+export default NavComponent;

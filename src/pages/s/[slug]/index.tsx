@@ -3,9 +3,14 @@ import { ContentPage } from "@/components";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { useRouter } from "next/router";
 
-function Content({ frontMatter, markdownBody }) {
+function Content({ frontMatter, markdownBody, t }) {
   const router = useRouter();
-  return <ContentPage source={{ frontMatter, markdownBody }} router={router} />;
+  return (
+    <ContentPage
+      {...{ source: { frontMatter, markdownBody }, t }}
+      router={router}
+    />
+  );
 }
 
 export default Content;

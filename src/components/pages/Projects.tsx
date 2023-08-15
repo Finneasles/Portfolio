@@ -5,8 +5,7 @@ import {
 } from "@/components";
 import { useTranslation } from "react-i18next";
 
-export const Page = ({ posts, router }) => {
-  const { t } = useTranslation();
+export const Page = ({ posts, router, t }) => {
   const pageDesc = t("LayoutDesc.projects");
   return (
     <Layout
@@ -15,6 +14,7 @@ export const Page = ({ posts, router }) => {
       router={router}
       transparentNav={true}
       pageDesc={pageDesc}
+      t={t}
     >
       <Hero src="proj" pageDesc={pageDesc} />
       <div className="body-container">

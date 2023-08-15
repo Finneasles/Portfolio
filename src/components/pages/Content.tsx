@@ -9,7 +9,7 @@ import {
 } from "@/components";
 import { useState } from "react";
 
-export const Page = ({ source, router }) => {
+export const Page = ({ source, router,t }) => {
   const [author] = useState(source.frontMatter.author);
   const [title] = useState(source.frontMatter.title);
   const [description] = useState(source.frontMatter.description);
@@ -27,6 +27,7 @@ export const Page = ({ source, router }) => {
       pageDesc={description}
       thumbSrc={thumbnail}
       transparentNav={source.frontMatter.hero ? true : false}
+      t={t}
     >
       {source.frontMatter.hero ? <Hero src={"about"} pageDesc={description} /> : null}
       <div className="body-container">

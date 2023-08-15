@@ -1,16 +1,12 @@
 import {
   MobileMenu as Burger,
-  Button,
   CTA,
   LogoComponent,
   Nav as Menu,
   SignInButtonComponent,
-  SignInModalComponent,
 } from "@/components";
-import { FaUser } from "react-icons/fa";
 import { NextRouter } from "next/router";
 import React, { useState } from "react";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 type Props = {
@@ -27,35 +23,29 @@ const variants = {
     "fixed bg-white dark:bg-[#00162D] bg-opacity-95 backdrop-blur-xl dark:border-white/10 border-white/10 bg-opacity-80",
 };
 
-export const Navbar = ({
-  scrollY,
-  router,
-  menuData,
-  transparentNav,
-  variant = "primary",
-}: Props) => {
+export const Navbar = (props) => {
   const [visible, setMobileMenu] = useState(false);
   const [modal, setModal] = useState(false);
-  const { t } = useTranslation();
 
   return (
     <nav
       aria-label="Site Navigation"
-      className={`${variants[variant]} z-[98] h-[96px] w-full border-b px-6 lg:px-32`}
+      className={`${
+        variants[props.variant || "primary"]
+      } z-[98] h-[96px] w-full border-b px-6 lg:px-32`}
     >
       <div
         className={`mx-auto flex h-full w-full max-w-4xl items-center justify-between text-sm`}
       >
-        <LogoComponent transparentNav={transparentNav} />
+        <LogoComponent transparentNav={props.transparentNav} />
         <div className="flex w-full items-center justify-end space-x-2">
           <Menu
-            transparentNav={transparentNav}
-            data={menuData}
-            router={router}
+          {...{...props,}}
+            transparentNav={props.transparentNav}
           />
           <SignInButtonComponent state={{ modal, setModal }} />
           <CTA />
-          <Burger data={menuData} state={{ visible, setMobileMenu }} />
+          <Burger data={props.menuData} state={{ visible, setMobileMenu }} />
         </div>
       </div>
     </nav>

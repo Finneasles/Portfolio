@@ -4,19 +4,18 @@ import {
   HeroSection as Hero,
   Layout,
 } from "@/components";
-import { useTranslation } from "react-i18next";
 
-const pageTitle = "Home";
-
-const Page = ({ posts, router }) => {
-  const { t } = useTranslation();
-
+const Page = (props) => {
   return (
-    <Layout title={t("home_label")} router={router} transparentNav={true}>
+    <Layout
+      title={props.t("home_label")}
+      {...props}
+      transparentNav={true}
+    >
       <Hero />
       <div className="body-container">
         <div className="main-section">
-          <Projects allPosts={posts} src={"home"} />
+          <Projects allPosts={props.posts} src={"home"} />
           {/* <Publications allPosts={posts} src={"home"} /> */}
         </div>
       </div>

@@ -1,20 +1,24 @@
 import {
-  RelatedArticlesSection,
-  CommentSection,
-  MdContent,
-  Thumbnail,
-  Author,
+  PublicationsSection as Publications,
+  CategoriesSection as Categories,
+  HeroSection as Hero,
   Layout,
 } from "@/components";
-import { useState } from "react";
 
-export const Page = ({ categories , router}) => {
-return (
+const Page = (props) => {
+  return (
     <Layout
-      title={"title"}
-      router={router}
+      title={props.t("home_label")}
+      {...props}
+      transparentNav={true}
     >
-      {JSON.stringify(categories)}
+      <Hero />
+      <div className="body-container">
+        <div className="main-section">
+           <Categories allPosts={props.posts} src={"home"} /> 
+          {/* <Publications allPosts={posts} src={"home"} /> */}
+        </div>
+      </div>
     </Layout>
   );
 };

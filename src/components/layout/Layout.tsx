@@ -127,7 +127,7 @@ export const Layout = (props) => {
       ) : null}
       <div className="sub-body">
         <div className="content">{props.children}</div>
-        {props.footer ? <Footer transparentNav={false} /> : null}
+        {props.footer != false ? <Footer transparentNav={false} /> : null}
       </div>
       {props.cookieConsent ? <CookieConsent /> : null}
     </div>

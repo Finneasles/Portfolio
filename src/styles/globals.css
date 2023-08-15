@@ -41,11 +41,19 @@ h3 {
 
 
 article pre {
-@apply overflow-hidden w-full flex
+@apply overflow-hidden w-full flex 
 }
 
+article p:first-of-type{
+  @apply my-4
+  }
+
+article ul {
+  @apply max-w-md mb-6 space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400
+  }
+
 article pre code {
-  @apply flex-grow text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6
+  @apply flex-grow text-sm my-6 sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6
   }
 
 

@@ -44,8 +44,14 @@ export const Layout = (props) => {
   const pageType = props.type || "website";
   const pageAuthor = process.env.NEXT_PUBLIC_STATIC_TITLE;
   const pageThumb =
-    props.thumbSrc || `${process.env.NEXT_PUBLIC_SITE_URL}images/thumb-min.png`;
+    props.thumbSrc ||
+    `${
+      process.env.NODE_ENV !== "production"
+        ? "http://localhost:3002/"
+        : process.env.NEXT_PUBLIC_SITE_URL
+    }images/thumb-min.png`;
 
+    const pageTitle = `${props.title} — ${process.env.NEXT_PUBLIC_STATIC_TITLE}`;
   return (
     <div>
       <Head>
@@ -63,13 +69,10 @@ export const Layout = (props) => {
           content="black-translucent"
         />
         <meta name="theme-color" content="#408FED" />
-        <meta
-          name="description"
-          content={desc || props.t("LayoutDesc.home")}
-        />
+        <meta name="description" content={desc || props.t("LayoutDesc.home")} />
         <meta
           property="og:title"
-          content={`${props.title} — ${process.env.NEXT_PUBLIC_STATIC_TITLE}`}
+          content={ pageTitle}
         />
         <meta
           property="og:description"
@@ -85,10 +88,8 @@ export const Layout = (props) => {
         <meta property="og:image" content={pageThumb} />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:site" content="@f1n-dev" />
-        <meta
-          property="twitter:title"
-          content={`${props.title} — ${process.env.NEXT_PUBLIC_STATIC_TITLE}`}
-        ></meta>
+        <meta property="twitter:title" content={pageTitle}></meta>
+        
         <link
           rel="apple-touch-icon"
           sizes="152x152"
@@ -114,7 +115,7 @@ export const Layout = (props) => {
           </div>
           <header>
             <Navbar
-              {...{...props , menuData : navData} }
+              {...{ ...props, menuData: navData }}
               menuData={navData}
               scrollY={scrollY}
               transparentNav={props.transparentNav}
@@ -127,7 +128,7 @@ export const Layout = (props) => {
       ) : null}
       <div className="sub-body">
         <div className="content">{props.children}</div>
-        {props.footer != false ? <Footer transparentNav={false} /> : null}
+        {props.footer ? <Footer transparentNav={false} /> : null}
       </div>
       {props.cookieConsent ? <CookieConsent /> : null}
     </div>

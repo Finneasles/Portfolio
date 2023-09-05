@@ -51,6 +51,18 @@ export const Section = ({
             <HeroDecorComponent {...{cursorLocation}} src={src} />
           </div>
         </div>
+
+        <div
+      style={{
+        left: `${cursorLocation.x - 400}px`,
+        top: `${cursorLocation.y - 300}px`,
+        backgroundBlendMode: "screen",
+        background: "radial-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.0002))"
+      }}
+      className="absolute h-[512px] w-[512px] content-center items-center justify-center rounded-[900px] transition"
+    >
+   
+    </div>
       </div>
     </section>
   );

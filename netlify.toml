@@ -4,9 +4,9 @@
   to = "https://f1n.dev/:splat"
   status = 301
   force = true # COMMENT: ensure that we always redirect
-
+  
 [[redirects]]
-  from = "https://github.f1n.dev/:splat"
+  from = "https://github.f1n.dev/*"
   to = "https://github.com/Finneasles/:splat"
   status = 200
   force = true # COMMENT: ensure that we always redirect

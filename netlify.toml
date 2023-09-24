@@ -6,8 +6,8 @@
   force = true # COMMENT: ensure that we always redirect
   
 [[redirects]]
-  from = "https://github.f1n.dev/*"
-  to = "https://github.com/Finneasles/:splat"
+  from = "https://github.f1n.dev/"
+  to = "https://github.com/Finneasles/"
   status = 200
   force = true # COMMENT: ensure that we always redirect
 
